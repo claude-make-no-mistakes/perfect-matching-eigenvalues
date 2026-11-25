@@ -1,0 +1,34 @@
+{
+  "published_tables_verified": [
+    3,
+    4
+  ],
+  "positive": {
+    "degree": 12,
+    "target": 5,
+    "accepted": true,
+    "maximizers": [
+      [
+        3,
+        1
+      ]
+    ],
+    "signed_competitor": 2,
+    "absolute_competitor": 6
+  },
+  "negative": {
+    "degree": 32,
+    "target": 4,
+    "accepted": false,
+    "maximizers": [
+      [
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "signed_competitor": 8,
+    "absolute_competitor": 8
+  }
+}

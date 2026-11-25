@@ -1,0 +1,2711 @@
+[
+  {
+    "n": 4,
+    "partitions": 5,
+    "two_singleton_bases": [
+      {
+        "core": [
+          2
+        ],
+        "degree": 12,
+        "target": 5,
+        "largest_competitor": 2,
+        "gap": 3
+      }
+    ]
+  },
+  {
+    "n": 5,
+    "partitions": 7,
+    "two_singleton_bases": [
+      {
+        "core": [
+          3
+        ],
+        "degree": 80,
+        "target": 26,
+        "largest_competitor": 20,
+        "gap": 6
+      }
+    ]
+  },
+  {
+    "n": 6,
+    "partitions": 11,
+    "two_singleton_bases": [
+      {
+        "core": [
+          2,
+          2
+        ],
+        "degree": 180,
+        "target": 48,
+        "largest_competitor": 45,
+        "gap": 3
+      },
+      {
+        "core": [
+          4
+        ],
+        "degree": 720,
+        "target": 192,
+        "largest_competitor": 30,
+        "gap": 162
+      }
+    ]
+  },
+  {
+    "n": 7,
+    "partitions": 15,
+    "two_singleton_bases": [
+      {
+        "core": [
+          3,
+          2
+        ],
+        "degree": 3360,
+        "target": 760,
+        "largest_competitor": 228,
+        "gap": 532
+      },
+      {
+        "core": [
+          5
+        ],
+        "degree": 8064,
+        "target": 1824,
+        "largest_competitor": 504,
+        "gap": 1320
+      }
+    ]
+  },
+  {
+    "n": 8,
+    "partitions": 22,
+    "two_singleton_bases": [
+      {
+        "core": [
+          2,
+          2,
+          2
+        ],
+        "degree": 3360,
+        "target": 660,
+        "largest_competitor": 396,
+        "gap": 264
+      },
+      {
+        "core": [
+          3,
+          3
+        ],
+        "degree": 17920,
+        "target": 3520,
+        "largest_competitor": 1504,
+        "gap": 2016
+      },
+      {
+        "core": [
+          4,
+          2
+        ],
+        "degree": 40320,
+        "target": 7920,
+        "largest_competitor": 2520,
+        "gap": 5400
+      },
+      {
+        "core": [
+          6
+        ],
+        "degree": 107520,
+        "target": 21120,
+        "largest_competitor": 960,
+        "gap": 20160
+      }
+    ]
+  },
+  {
+    "n": 9,
+    "partitions": 30,
+    "two_singleton_bases": [
+      {
+        "core": [
+          3,
+          2,
+          2
+        ],
+        "degree": 120960,
+        "target": 21000,
+        "largest_competitor": 7560,
+        "gap": 13440
+      },
+      {
+        "core": [
+          4,
+          3
+        ],
+        "degree": 483840,
+        "target": 84000,
+        "largest_competitor": 14448,
+        "gap": 69552
+      },
+      {
+        "core": [
+          5,
+          2
+        ],
+        "degree": 580608,
+        "target": 100800,
+        "largest_competitor": 14688,
+        "gap": 86112
+      },
+      {
+        "core": [
+          7
+        ],
+        "degree": 1658880,
+        "target": 288000,
+        "largest_competitor": 25920,
+        "gap": 262080
+      }
+    ]
+  },
+  {
+    "n": 10,
+    "partitions": 42,
+    "two_singleton_bases": [
+      {
+        "core": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "degree": 75600,
+        "target": 11760,
+        "largest_competitor": 7260,
+        "gap": 4500
+      },
+      {
+        "core": [
+          3,
+          3,
+          2
+        ],
+        "degree": 1612800,
+        "target": 250880,
+        "largest_competitor": 43920,
+        "gap": 206960
+      },
+      {
+        "core": [
+          4,
+          2,
+          2
+        ],
+        "degree": 1814400,
+        "target": 282240,
+        "largest_competitor": 82440,
+        "gap": 199800
+      },
+      {
+        "core": [
+          4,
+          4
+        ],
+        "degree": 3628800,
+        "target": 564480,
+        "largest_competitor": 98460,
+        "gap": 466020
+      },
+      {
+        "core": [
+          5,
+          3
+        ],
+        "degree": 7741440,
+        "target": 1204224,
+        "largest_competitor": 120960,
+        "gap": 1083264
+      },
+      {
+        "core": [
+          6,
+          2
+        ],
+        "degree": 9676800,
+        "target": 1505280,
+        "largest_competitor": 194880,
+        "gap": 1310400
+      },
+      {
+        "core": [
+          8
+        ],
+        "degree": 29030400,
+        "target": 4515840,
+        "largest_competitor": 161280,
+        "gap": 4354560
+      }
+    ]
+  },
+  {
+    "n": 11,
+    "partitions": 56,
+    "two_singleton_bases": [
+      {
+        "core": [
+          3,
+          2,
+          2,
+          2
+        ],
+        "degree": 4435200,
+        "target": 624960,
+        "largest_competitor": 253680,
+        "gap": 371280
+      },
+      {
+        "core": [
+          3,
+          3,
+          3
+        ],
+        "degree": 7884800,
+        "target": 1111040,
+        "largest_competitor": 137600,
+        "gap": 973440
+      },
+      {
+        "core": [
+          4,
+          3,
+          2
+        ],
+        "degree": 53222400,
+        "target": 7499520,
+        "largest_competitor": 873600,
+        "gap": 6625920
+      },
+      {
+        "core": [
+          5,
+          2,
+          2
+        ],
+        "degree": 31933440,
+        "target": 4499712,
+        "largest_competitor": 1175328,
+        "gap": 3324384
+      },
+      {
+        "core": [
+          5,
+          4
+        ],
+        "degree": 127733760,
+        "target": 17998848,
+        "largest_competitor": 1205280,
+        "gap": 16793568
+      },
+      {
+        "core": [
+          6,
+          3
+        ],
+        "degree": 141926400,
+        "target": 19998720,
+        "largest_competitor": 692160,
+        "gap": 19306560
+      },
+      {
+        "core": [
+          7,
+          2
+        ],
+        "degree": 182476800,
+        "target": 25712640,
+        "largest_competitor": 2995200,
+        "gap": 22717440
+      },
+      {
+        "core": [
+          9
+        ],
+        "degree": 567705600,
+        "target": 79994880,
+        "largest_competitor": 2580480,
+        "gap": 77414400
+      }
+    ]
+  },
+  {
+    "n": 12,
+    "partitions": 77,
+    "two_singleton_bases": [
+      {
+        "core": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "degree": 1995840,
+        "target": 257040,
+        "largest_competitor": 161280,
+        "gap": 95760
+      },
+      {
+        "core": [
+          3,
+          3,
+          2,
+          2
+        ],
+        "degree": 106444800,
+        "target": 13708800,
+        "largest_competitor": 3239040,
+        "gap": 10469760
+      },
+      {
+        "core": [
+          4,
+          2,
+          2,
+          2
+        ],
+        "degree": 79833600,
+        "target": 10281600,
+        "largest_competitor": 3769920,
+        "gap": 6511680
+      },
+      {
+        "core": [
+          4,
+          3,
+          3
+        ],
+        "degree": 425779200,
+        "target": 54835200,
+        "largest_competitor": 4184640,
+        "gap": 50650560
+      },
+      {
+        "core": [
+          4,
+          4,
+          2
+        ],
+        "degree": 479001600,
+        "target": 61689600,
+        "largest_competitor": 6531840,
+        "gap": 55157760
+      },
+      {
+        "core": [
+          5,
+          3,
+          2
+        ],
+        "degree": 1021870080,
+        "target": 131604480,
+        "largest_competitor": 13934592,
+        "gap": 117669888
+      },
+      {
+        "core": [
+          5,
+          5
+        ],
+        "degree": 1226244096,
+        "target": 157925376,
+        "largest_competitor": 10043136,
+        "gap": 147882240
+      },
+      {
+        "core": [
+          6,
+          2,
+          2
+        ],
+        "degree": 638668800,
+        "target": 82252800,
+        "largest_competitor": 19434240,
+        "gap": 62818560
+      },
+      {
+        "core": [
+          6,
+          4
+        ],
+        "degree": 2554675200,
+        "target": 329011200,
+        "largest_competitor": 9979200,
+        "gap": 319032000
+      },
+      {
+        "core": [
+          7,
+          3
+        ],
+        "degree": 2919628800,
+        "target": 376012800,
+        "largest_competitor": 11404800,
+        "gap": 364608000
+      },
+      {
+        "core": [
+          8,
+          2
+        ],
+        "degree": 3832012800,
+        "target": 493516800,
+        "largest_competitor": 52254720,
+        "gap": 441262080
+      },
+      {
+        "core": [
+          10
+        ],
+        "degree": 12262440960,
+        "target": 1579253760,
+        "largest_competitor": 46448640,
+        "gap": 1532805120
+      }
+    ]
+  },
+  {
+    "n": 13,
+    "partitions": 101,
+    "two_singleton_bases": [
+      {
+        "core": [
+          3,
+          2,
+          2,
+          2,
+          2
+        ],
+        "degree": 172972800,
+        "target": 20512800,
+        "largest_competitor": 9293760,
+        "gap": 11219040
+      },
+      {
+        "core": [
+          3,
+          3,
+          3,
+          2
+        ],
+        "degree": 1230028800,
+        "target": 145868800,
+        "largest_competitor": 18231360,
+        "gap": 127637440
+      },
+      {
+        "core": [
+          4,
+          3,
+          2,
+          2
+        ],
+        "degree": 4151347200,
+        "target": 492307200,
+        "largest_competitor": 106202880,
+        "gap": 386104320
+      },
+      {
+        "core": [
+          4,
+          4,
+          3
+        ],
+        "degree": 8302694400,
+        "target": 984614400,
+        "largest_competitor": 47471040,
+        "gap": 937143360
+      },
+      {
+        "core": [
+          5,
+          2,
+          2,
+          2
+        ],
+        "degree": 1660538880,
+        "target": 196922880,
+        "largest_competitor": 65850624,
+        "gap": 131072256
+      },
+      {
+        "core": [
+          5,
+          3,
+          3
+        ],
+        "degree": 8856207360,
+        "target": 1050255360,
+        "largest_competitor": 41953536,
+        "gap": 1008301824
+      },
+      {
+        "core": [
+          5,
+          4,
+          2
+        ],
+        "degree": 19926466560,
+        "target": 2363074560,
+        "largest_competitor": 229340160,
+        "gap": 2133734400
+      },
+      {
+        "core": [
+          6,
+          3,
+          2
+        ],
+        "degree": 22140518400,
+        "target": 2625638400,
+        "largest_competitor": 254822400,
+        "gap": 2370816000
+      },
+      {
+        "core": [
+          6,
+          5
+        ],
+        "degree": 53137244160,
+        "target": 6301532160,
+        "largest_competitor": 170311680,
+        "gap": 6131220480
+      },
+      {
+        "core": [
+          7,
+          2,
+          2
+        ],
+        "degree": 14233190400,
+        "target": 1687910400,
+        "largest_competitor": 364124160,
+        "gap": 1323786240
+      },
+      {
+        "core": [
+          7,
+          4
+        ],
+        "degree": 56932761600,
+        "target": 6751641600,
+        "largest_competitor": 182476800,
+        "gap": 6569164800
+      },
+      {
+        "core": [
+          8,
+          3
+        ],
+        "degree": 66421555200,
+        "target": 7876915200,
+        "largest_competitor": 212889600,
+        "gap": 7664025600
+      },
+      {
+        "core": [
+          9,
+          2
+        ],
+        "degree": 88562073600,
+        "target": 10502553600,
+        "largest_competitor": 1019289600,
+        "gap": 9483264000
+      },
+      {
+        "core": [
+          11
+        ],
+        "degree": 289839513600,
+        "target": 34371993600,
+        "largest_competitor": 928972800,
+        "gap": 33443020800
+      }
+    ]
+  },
+  {
+    "n": 14,
+    "partitions": 135,
+    "two_singleton_bases": [
+      {
+        "core": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "degree": 60540480,
+        "target": 6652800,
+        "largest_competitor": 4218480,
+        "gap": 2434320
+      },
+      {
+        "core": [
+          3,
+          3,
+          2,
+          2,
+          2
+        ],
+        "degree": 6457651200,
+        "target": 709632000,
+        "largest_competitor": 218131200,
+        "gap": 491500800
+      },
+      {
+        "core": [
+          3,
+          3,
+          3,
+          3
+        ],
+        "degree": 5740134400,
+        "target": 630784000,
+        "largest_competitor": 57272320,
+        "gap": 573511680
+      },
+      {
+        "core": [
+          4,
+          2,
+          2,
+          2,
+          2
+        ],
+        "degree": 3632428800,
+        "target": 399168000,
+        "largest_competitor": 166168800,
+        "gap": 232999200
+      },
+      {
+        "core": [
+          4,
+          3,
+          3,
+          2
+        ],
+        "degree": 77491814400,
+        "target": 8515584000,
+        "largest_competitor": 762854400,
+        "gap": 7752729600
+      },
+      {
+        "core": [
+          4,
+          4,
+          2,
+          2
+        ],
+        "degree": 43589145600,
+        "target": 4790016000,
+        "largest_competitor": 950745600,
+        "gap": 3839270400
+      },
+      {
+        "core": [
+          4,
+          4,
+          4
+        ],
+        "degree": 58118860800,
+        "target": 6386688000,
+        "largest_competitor": 196378560,
+        "gap": 6190309440
+      },
+      {
+        "core": [
+          5,
+          3,
+          2,
+          2
+        ],
+        "degree": 92990177280,
+        "target": 10218700800,
+        "largest_competitor": 2028257280,
+        "gap": 8190443520
+      },
+      {
+        "core": [
+          5,
+          4,
+          3
+        ],
+        "degree": 371960709120,
+        "target": 40874803200,
+        "largest_competitor": 1021870080,
+        "gap": 39852933120
+      },
+      {
+        "core": [
+          5,
+          5,
+          2
+        ],
+        "degree": 223176425472,
+        "target": 24524881920,
+        "largest_competitor": 2197020672,
+        "gap": 22327861248
+      },
+      {
+        "core": [
+          6,
+          2,
+          2,
+          2
+        ],
+        "degree": 38745907200,
+        "target": 4257792000,
+        "largest_competitor": 1308787200,
+        "gap": 2949004800
+      },
+      {
+        "core": [
+          6,
+          3,
+          3
+        ],
+        "degree": 206644838400,
+        "target": 22708224000,
+        "largest_competitor": 746188800,
+        "gap": 21962035200
+      },
+      {
+        "core": [
+          6,
+          4,
+          2
+        ],
+        "degree": 464950886400,
+        "target": 51093504000,
+        "largest_competitor": 4577126400,
+        "gap": 46516377600
+      },
+      {
+        "core": [
+          6,
+          6
+        ],
+        "degree": 619934515200,
+        "target": 68124672000,
+        "largest_competitor": 1703116800,
+        "gap": 66421555200
+      },
+      {
+        "core": [
+          7,
+          3,
+          2
+        ],
+        "degree": 531372441600,
+        "target": 58392576000,
+        "largest_competitor": 5231001600,
+        "gap": 53161574400
+      },
+      {
+        "core": [
+          7,
+          5
+        ],
+        "degree": 1275293859840,
+        "target": 140142182400,
+        "largest_competitor": 3503554560,
+        "gap": 136638627840
+      },
+      {
+        "core": [
+          8,
+          2,
+          2
+        ],
+        "degree": 348713164800,
+        "target": 38320128000,
+        "largest_competitor": 7605964800,
+        "gap": 30714163200
+      },
+      {
+        "core": [
+          8,
+          4
+        ],
+        "degree": 1394852659200,
+        "target": 153280512000,
+        "largest_competitor": 3832012800,
+        "gap": 149448499200
+      },
+      {
+        "core": [
+          9,
+          3
+        ],
+        "degree": 1653158707200,
+        "target": 181665792000,
+        "largest_competitor": 4541644800,
+        "gap": 177124147200
+      },
+      {
+        "core": [
+          10,
+          2
+        ],
+        "degree": 2231764254720,
+        "target": 245248819200,
+        "largest_competitor": 21970206720,
+        "gap": 223278612480
+      },
+      {
+        "core": [
+          12
+        ],
+        "degree": 7439214182400,
+        "target": 817496064000,
+        "largest_competitor": 20437401600,
+        "gap": 797058662400
+      }
+    ]
+  },
+  {
+    "n": 15,
+    "partitions": 176,
+    "two_singleton_bases": [
+      {
+        "core": [
+          3,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "degree": 7264857600,
+        "target": 743783040,
+        "largest_competitor": 361247040,
+        "gap": 382536000
+      },
+      {
+        "core": [
+          3,
+          3,
+          3,
+          2,
+          2
+        ],
+        "degree": 129153024000,
+        "target": 13222809600,
+        "largest_competitor": 2430489600,
+        "gap": 10792320000
+      },
+      {
+        "core": [
+          4,
+          3,
+          2,
+          2,
+          2
+        ],
+        "degree": 290594304000,
+        "target": 29751321600,
+        "largest_competitor": 8462361600,
+        "gap": 21288960000
+      },
+      {
+        "core": [
+          4,
+          3,
+          3,
+          3
+        ],
+        "degree": 516612096000,
+        "target": 52891238400,
+        "largest_competitor": 2776704000,
+        "gap": 50114534400
+      },
+      {
+        "core": [
+          4,
+          4,
+          3,
+          2
+        ],
+        "degree": 1743565824000,
+        "target": 178507929600,
+        "largest_competitor": 14849049600,
+        "gap": 163658880000
+      },
+      {
+        "core": [
+          5,
+          2,
+          2,
+          2,
+          2
+        ],
+        "degree": 87178291200,
+        "target": 8925396480,
+        "largest_competitor": 3436836480,
+        "gap": 5488560000
+      },
+      {
+        "core": [
+          5,
+          3,
+          3,
+          2
+        ],
+        "degree": 1859803545600,
+        "target": 190408458240,
+        "largest_competitor": 15838986240,
+        "gap": 174569472000
+      },
+      {
+        "core": [
+          5,
+          4,
+          2,
+          2
+        ],
+        "degree": 2092278988800,
+        "target": 214209515520,
+        "largest_competitor": 39373931520,
+        "gap": 174835584000
+      },
+      {
+        "core": [
+          5,
+          4,
+          4
+        ],
+        "degree": 4184557977600,
+        "target": 428419031040,
+        "largest_competitor": 9963233280,
+        "gap": 418455797760
+      },
+      {
+        "core": [
+          5,
+          5,
+          3
+        ],
+        "degree": 4463528509440,
+        "target": 456980299776,
+        "largest_competitor": 10627448832,
+        "gap": 446352850944
+      },
+      {
+        "core": [
+          6,
+          3,
+          2,
+          2
+        ],
+        "degree": 2324754432000,
+        "target": 238010572800,
+        "largest_competitor": 43748812800,
+        "gap": 194261760000
+      },
+      {
+        "core": [
+          6,
+          4,
+          3
+        ],
+        "degree": 9299017728000,
+        "target": 952042291200,
+        "largest_competitor": 22140518400,
+        "gap": 929901772800
+      },
+      {
+        "core": [
+          6,
+          5,
+          2
+        ],
+        "degree": 11158821273600,
+        "target": 1142450749440,
+        "largest_competitor": 95033917440,
+        "gap": 1047416832000
+      },
+      {
+        "core": [
+          7,
+          2,
+          2,
+          2
+        ],
+        "degree": 996323328000,
+        "target": 102004531200,
+        "largest_competitor": 29013811200,
+        "gap": 72990720000
+      },
+      {
+        "core": [
+          7,
+          3,
+          3
+        ],
+        "degree": 5313724416000,
+        "target": 544024166400,
+        "largest_competitor": 15206400000,
+        "gap": 528817766400
+      },
+      {
+        "core": [
+          7,
+          4,
+          2
+        ],
+        "degree": 11955879936000,
+        "target": 1224054374400,
+        "largest_competitor": 101822054400,
+        "gap": 1122232320000
+      },
+      {
+        "core": [
+          7,
+          6
+        ],
+        "degree": 31882346496000,
+        "target": 3264144998400,
+        "largest_competitor": 75910348800,
+        "gap": 3188234649600
+      },
+      {
+        "core": [
+          8,
+          3,
+          2
+        ],
+        "degree": 13948526592000,
+        "target": 1428063436800,
+        "largest_competitor": 118792396800,
+        "gap": 1309271040000
+      },
+      {
+        "core": [
+          8,
+          5
+        ],
+        "degree": 33476463820800,
+        "target": 3427352248320,
+        "largest_competitor": 79705866240,
+        "gap": 3347646382080
+      },
+      {
+        "core": [
+          9,
+          2,
+          2
+        ],
+        "degree": 9299017728000,
+        "target": 952042291200,
+        "largest_competitor": 174995251200,
+        "gap": 777047040000
+      },
+      {
+        "core": [
+          9,
+          4
+        ],
+        "degree": 37196070912000,
+        "target": 3808169164800,
+        "largest_competitor": 88562073600,
+        "gap": 3719607091200
+      },
+      {
+        "core": [
+          10,
+          3
+        ],
+        "degree": 44635285094400,
+        "target": 4569802997760,
+        "largest_competitor": 106274488320,
+        "gap": 4463528509440
+      },
+      {
+        "core": [
+          11,
+          2
+        ],
+        "degree": 60866297856000,
+        "target": 6231549542400,
+        "largest_competitor": 518366822400,
+        "gap": 5713182720000
+      },
+      {
+        "core": [
+          13
+        ],
+        "degree": 206009008128000,
+        "target": 21091398451200,
+        "largest_competitor": 490497638400,
+        "gap": 20600900812800
+      }
+    ]
+  },
+  {
+    "n": 16,
+    "partitions": 231,
+    "two_singleton_bases": [
+      {
+        "core": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "degree": 2075673600,
+        "target": 198918720,
+        "largest_competitor": 127068480,
+        "gap": 71850240
+      },
+      {
+        "core": [
+          3,
+          3,
+          2,
+          2,
+          2,
+          2
+        ],
+        "degree": 387459072000,
+        "target": 37131494400,
+        "largest_competitor": 13301164800,
+        "gap": 23830329600
+      },
+      {
+        "core": [
+          3,
+          3,
+          3,
+          3,
+          2
+        ],
+        "degree": 1377632256000,
+        "target": 132023091200,
+        "largest_competitor": 12855091200,
+        "gap": 119168000000
+      },
+      {
+        "core": [
+          4,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "degree": 174356582400,
+        "target": 16709172480,
+        "largest_competitor": 7548266880,
+        "gap": 9160905600
+      },
+      {
+        "core": [
+          4,
+          3,
+          3,
+          2,
+          2
+        ],
+        "degree": 9299017728000,
+        "target": 891155865600,
+        "largest_competitor": 152535398400,
+        "gap": 738620467200
+      },
+      {
+        "core": [
+          4,
+          4,
+          2,
+          2,
+          2
+        ],
+        "degree": 3487131648000,
+        "target": 334183449600,
+        "largest_competitor": 88455628800,
+        "gap": 245727820800
+      },
+      {
+        "core": [
+          4,
+          4,
+          3,
+          3
+        ],
+        "degree": 18598035456000,
+        "target": 1782311731200,
+        "largest_competitor": 57125376000,
+        "gap": 1725186355200
+      },
+      {
+        "core": [
+          4,
+          4,
+          4,
+          2
+        ],
+        "degree": 13948526592000,
+        "target": 1336733798400,
+        "largest_competitor": 103783680000,
+        "gap": 1232950118400
+      },
+      {
+        "core": [
+          5,
+          3,
+          2,
+          2,
+          2
+        ],
+        "degree": 7439214182400,
+        "target": 712924692480,
+        "largest_competitor": 188705341440,
+        "gap": 524219351040
+      },
+      {
+        "core": [
+          5,
+          3,
+          3,
+          3
+        ],
+        "degree": 13225269657600,
+        "target": 1267421675520,
+        "largest_competitor": 57219563520,
+        "gap": 1210202112000
+      },
+      {
+        "core": [
+          5,
+          4,
+          3,
+          2
+        ],
+        "degree": 89270570188800,
+        "target": 8555096309760,
+        "largest_competitor": 664215552000,
+        "gap": 7890880757760
+      },
+      {
+        "core": [
+          5,
+          5,
+          2,
+          2
+        ],
+        "degree": 26781171056640,
+        "target": 2566528892928,
+        "largest_competitor": 439301947392,
+        "gap": 2127226945536
+      },
+      {
+        "core": [
+          5,
+          5,
+          4
+        ],
+        "degree": 107124684226560,
+        "target": 10266115571712,
+        "largest_competitor": 223176425472,
+        "gap": 10042939146240
+      },
+      {
+        "core": [
+          6,
+          2,
+          2,
+          2,
+          2
+        ],
+        "degree": 2324754432000,
+        "target": 222788966400,
+        "largest_competitor": 79806988800,
+        "gap": 142981977600
+      },
+      {
+        "core": [
+          6,
+          3,
+          3,
+          2
+        ],
+        "degree": 49594761216000,
+        "target": 4752831283200,
+        "largest_competitor": 369008640000,
+        "gap": 4383822643200
+      },
+      {
+        "core": [
+          6,
+          4,
+          2,
+          2
+        ],
+        "degree": 55794106368000,
+        "target": 5346935193600,
+        "largest_competitor": 915212390400,
+        "gap": 4431722803200
+      },
+      {
+        "core": [
+          6,
+          4,
+          4
+        ],
+        "degree": 111588212736000,
+        "target": 10693870387200,
+        "largest_competitor": 232475443200,
+        "gap": 10461394944000
+      },
+      {
+        "core": [
+          6,
+          5,
+          3
+        ],
+        "degree": 238054853836800,
+        "target": 22813590159360,
+        "largest_competitor": 495947612160,
+        "gap": 22317642547200
+      },
+      {
+        "core": [
+          6,
+          6,
+          2
+        ],
+        "degree": 148784283648000,
+        "target": 14258493849600,
+        "largest_competitor": 1107025920000,
+        "gap": 13151467929600
+      },
+      {
+        "core": [
+          7,
+          3,
+          2,
+          2
+        ],
+        "degree": 63764692992000,
+        "target": 6110783078400,
+        "largest_competitor": 1045957017600,
+        "gap": 5064826060800
+      },
+      {
+        "core": [
+          7,
+          4,
+          3
+        ],
+        "degree": 255058771968000,
+        "target": 24443132313600,
+        "largest_competitor": 531372441600,
+        "gap": 23911759872000
+      },
+      {
+        "core": [
+          7,
+          5,
+          2
+        ],
+        "degree": 306070526361600,
+        "target": 29331758776320,
+        "largest_competitor": 2277310464000,
+        "gap": 27054448312320
+      },
+      {
+        "core": [
+          7,
+          7
+        ],
+        "degree": 437243609088000,
+        "target": 41902512537600,
+        "largest_competitor": 910924185600,
+        "gap": 40991588352000
+      },
+      {
+        "core": [
+          8,
+          2,
+          2,
+          2
+        ],
+        "degree": 27897053184000,
+        "target": 2673467596800,
+        "largest_competitor": 707645030400,
+        "gap": 1965822566400
+      },
+      {
+        "core": [
+          8,
+          3,
+          3
+        ],
+        "degree": 148784283648000,
+        "target": 14258493849600,
+        "largest_competitor": 343255449600,
+        "gap": 13915238400000
+      },
+      {
+        "core": [
+          8,
+          4,
+          2
+        ],
+        "degree": 334764638208000,
+        "target": 32081611161600,
+        "largest_competitor": 2490808320000,
+        "gap": 29590802841600
+      },
+      {
+        "core": [
+          8,
+          6
+        ],
+        "degree": 892705701888000,
+        "target": 85550963097600,
+        "largest_competitor": 1859803545600,
+        "gap": 83691159552000
+      },
+      {
+        "core": [
+          9,
+          3,
+          2
+        ],
+        "degree": 396758089728000,
+        "target": 38022650265600,
+        "largest_competitor": 2952069120000,
+        "gap": 35070581145600
+      },
+      {
+        "core": [
+          9,
+          5
+        ],
+        "degree": 952219415347200,
+        "target": 91254360637440,
+        "largest_competitor": 1983790448640,
+        "gap": 89270570188800
+      },
+      {
+        "core": [
+          10,
+          2,
+          2
+        ],
+        "degree": 267811710566400,
+        "target": 25665288929280,
+        "largest_competitor": 4393019473920,
+        "gap": 21272269455360
+      },
+      {
+        "core": [
+          10,
+          4
+        ],
+        "degree": 1071246842265600,
+        "target": 102661155717120,
+        "largest_competitor": 2231764254720,
+        "gap": 100429391462400
+      },
+      {
+        "core": [
+          11,
+          3
+        ],
+        "degree": 1298481020928000,
+        "target": 124437764505600,
+        "largest_competitor": 2705168793600,
+        "gap": 121732595712000
+      },
+      {
+        "core": [
+          12,
+          2
+        ],
+        "degree": 1785411403776000,
+        "target": 171101926195200,
+        "largest_competitor": 13284311040000,
+        "gap": 157817615155200
+      },
+      {
+        "core": [
+          14
+        ],
+        "degree": 6121410527232000,
+        "target": 586635175526400,
+        "largest_competitor": 12752938598400,
+        "gap": 573882236928000
+      }
+    ]
+  },
+  {
+    "n": 17,
+    "partitions": 297,
+    "two_singleton_bases": [
+      {
+        "core": [
+          3,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "degree": 329340211200,
+        "target": 29664835200,
+        "largest_competitor": 15117822720,
+        "gap": 14547012480
+      },
+      {
+        "core": [
+          3,
+          3,
+          3,
+          2,
+          2,
+          2
+        ],
+        "degree": 11709874176000,
+        "target": 1054749696000,
+        "largest_competitor": 261073612800,
+        "gap": 793676083200
+      },
+      {
+        "core": [
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "degree": 6245266227200,
+        "target": 562533171200,
+        "largest_competitor": 42656768000,
+        "gap": 519876403200
+      },
+      {
+        "core": [
+          4,
+          3,
+          2,
+          2,
+          2,
+          2
+        ],
+        "degree": 19760412672000,
+        "target": 1779890112000,
+        "largest_competitor": 596064268800,
+        "gap": 1183825843200
+      },
+      {
+        "core": [
+          4,
+          3,
+          3,
+          3,
+          2
+        ],
+        "degree": 140518490112000,
+        "target": 12656996352000,
+        "largest_competitor": 921291571200,
+        "gap": 11735704780800
+      },
+      {
+        "core": [
+          4,
+          4,
+          3,
+          2,
+          2
+        ],
+        "degree": 237124952064000,
+        "target": 21358681344000,
+        "largest_competitor": 3420710092800,
+        "gap": 17937971251200
+      },
+      {
+        "core": [
+          4,
+          4,
+          4,
+          3
+        ],
+        "degree": 316166602752000,
+        "target": 28478241792000,
+        "largest_competitor": 656522496000,
+        "gap": 27821719296000
+      },
+      {
+        "core": [
+          5,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "degree": 4742499041280,
+        "target": 427173626880,
+        "largest_competitor": 180376035840,
+        "gap": 246797591040
+      },
+      {
+        "core": [
+          5,
+          3,
+          3,
+          2,
+          2
+        ],
+        "degree": 252933282201600,
+        "target": 22782593433600,
+        "largest_competitor": 3648757432320,
+        "gap": 19133836001280
+      },
+      {
+        "core": [
+          5,
+          4,
+          2,
+          2,
+          2
+        ],
+        "degree": 189699961651200,
+        "target": 17086945075200,
+        "largest_competitor": 4229392527360,
+        "gap": 12857552547840
+      },
+      {
+        "core": [
+          5,
+          4,
+          3,
+          3
+        ],
+        "degree": 1011733128806400,
+        "target": 91130373734400,
+        "largest_competitor": 1909619712000,
+        "gap": 89220754022400
+      },
+      {
+        "core": [
+          5,
+          4,
+          4,
+          2
+        ],
+        "degree": 1138199769907200,
+        "target": 102521670451200,
+        "largest_competitor": 7462461726720,
+        "gap": 95059208724480
+      },
+      {
+        "core": [
+          5,
+          5,
+          3,
+          2
+        ],
+        "degree": 1214079754567680,
+        "target": 109356448481280,
+        "largest_competitor": 7959959175168,
+        "gap": 101396489306112
+      },
+      {
+        "core": [
+          5,
+          5,
+          5
+        ],
+        "degree": 971263803654144,
+        "target": 87485158785024,
+        "largest_competitor": 1785411403776,
+        "gap": 85699747381248
+      },
+      {
+        "core": [
+          6,
+          3,
+          2,
+          2,
+          2
+        ],
+        "degree": 210777735168000,
+        "target": 18985494528000,
+        "largest_competitor": 4699325030400,
+        "gap": 14286169497600
+      },
+      {
+        "core": [
+          6,
+          3,
+          3,
+          3
+        ],
+        "degree": 374715973632000,
+        "target": 33751990272000,
+        "largest_competitor": 1324646400000,
+        "gap": 32427343872000
+      },
+      {
+        "core": [
+          6,
+          4,
+          3,
+          2
+        ],
+        "degree": 2529332822016000,
+        "target": 227825934336000,
+        "largest_competitor": 16583248281600,
+        "gap": 211242686054400
+      },
+      {
+        "core": [
+          6,
+          5,
+          2,
+          2
+        ],
+        "degree": 1517599693209600,
+        "target": 136695560601600,
+        "largest_competitor": 21892544593920,
+        "gap": 114803016007680
+      },
+      {
+        "core": [
+          6,
+          5,
+          4
+        ],
+        "degree": 6070398772838400,
+        "target": 546782242406400,
+        "largest_competitor": 11158821273600,
+        "gap": 535623421132800
+      },
+      {
+        "core": [
+          6,
+          6,
+          3
+        ],
+        "degree": 3372443762688000,
+        "target": 303767912448000,
+        "largest_competitor": 6199345152000,
+        "gap": 297568567296000
+      },
+      {
+        "core": [
+          7,
+          2,
+          2,
+          2,
+          2
+        ],
+        "degree": 67749986304000,
+        "target": 6102480384000,
+        "largest_competitor": 2043648921600,
+        "gap": 4058831462400
+      },
+      {
+        "core": [
+          7,
+          3,
+          3,
+          2
+        ],
+        "degree": 1445333041152000,
+        "target": 130186248192000,
+        "largest_competitor": 9476141875200,
+        "gap": 120710106316800
+      },
+      {
+        "core": [
+          7,
+          4,
+          2,
+          2
+        ],
+        "degree": 1625999671296000,
+        "target": 146459529216000,
+        "largest_competitor": 23456297779200,
+        "gap": 123003231436800
+      },
+      {
+        "core": [
+          7,
+          4,
+          4
+        ],
+        "degree": 3251999342592000,
+        "target": 292919058432000,
+        "largest_competitor": 5977939968000,
+        "gap": 286941118464000
+      },
+      {
+        "core": [
+          7,
+          5,
+          3
+        ],
+        "degree": 6937598597529600,
+        "target": 624893991321600,
+        "largest_competitor": 12752938598400,
+        "gap": 612141052723200
+      },
+      {
+        "core": [
+          7,
+          6,
+          2
+        ],
+        "degree": 8671998246912000,
+        "target": 781117489152000,
+        "largest_competitor": 56856851251200,
+        "gap": 724260637900800
+      },
+      {
+        "core": [
+          8,
+          3,
+          2,
+          2
+        ],
+        "degree": 1896999616512000,
+        "target": 170869450752000,
+        "largest_competitor": 27365680742400,
+        "gap": 143503770009600
+      },
+      {
+        "core": [
+          8,
+          4,
+          3
+        ],
+        "degree": 7587998466048000,
+        "target": 683477803008000,
+        "largest_competitor": 13948526592000,
+        "gap": 669529276416000
+      },
+      {
+        "core": [
+          8,
+          5,
+          2
+        ],
+        "degree": 9105598159257600,
+        "target": 820173363609600,
+        "largest_competitor": 59699693813760,
+        "gap": 760473669795840
+      },
+      {
+        "core": [
+          8,
+          7
+        ],
+        "degree": 26015994740736000,
+        "target": 2343352467456000,
+        "largest_competitor": 47823519744000,
+        "gap": 2295528947712000
+      },
+      {
+        "core": [
+          9,
+          2,
+          2,
+          2
+        ],
+        "degree": 843110940672000,
+        "target": 75941978112000,
+        "largest_competitor": 18797300121600,
+        "gap": 57144677990400
+      },
+      {
+        "core": [
+          9,
+          3,
+          3
+        ],
+        "degree": 4496591683584000,
+        "target": 405023883264000,
+        "largest_competitor": 8487198720000,
+        "gap": 396536684544000
+      },
+      {
+        "core": [
+          9,
+          4,
+          2
+        ],
+        "degree": 10117331288064000,
+        "target": 911303737344000,
+        "largest_competitor": 66332993126400,
+        "gap": 844970744217600
+      },
+      {
+        "core": [
+          9,
+          6
+        ],
+        "degree": 26979550101504000,
+        "target": 2430143299584000,
+        "largest_competitor": 49594761216000,
+        "gap": 2380548538368000
+      },
+      {
+        "core": [
+          10,
+          3,
+          2
+        ],
+        "degree": 12140797545676800,
+        "target": 1093564484812800,
+        "largest_competitor": 79599591751680,
+        "gap": 1013964893061120
+      },
+      {
+        "core": [
+          10,
+          5
+        ],
+        "degree": 29137914109624320,
+        "target": 2624554763550720,
+        "largest_competitor": 53562342113280,
+        "gap": 2570992421437440
+      },
+      {
+        "core": [
+          11,
+          2,
+          2
+        ],
+        "degree": 8277816508416000,
+        "target": 745612148736000,
+        "largest_competitor": 119413879603200,
+        "gap": 626198269132800
+      },
+      {
+        "core": [
+          11,
+          4
+        ],
+        "degree": 33111266033664000,
+        "target": 2982448594944000,
+        "largest_competitor": 60866297856000,
+        "gap": 2921582297088000
+      },
+      {
+        "core": [
+          12,
+          3
+        ],
+        "degree": 40469325152256000,
+        "target": 3645214949376000,
+        "largest_competitor": 74392141824000,
+        "gap": 3570822807552000
+      },
+      {
+        "core": [
+          13,
+          2
+        ],
+        "degree": 56034450210816000,
+        "target": 5047220699136000,
+        "largest_competitor": 367382731161600,
+        "gap": 4679837967974400
+      },
+      {
+        "core": [
+          15
+        ],
+        "degree": 194252760730828800,
+        "target": 17497031757004800,
+        "largest_competitor": 357082280755200,
+        "gap": 17139949476249600
+      }
+    ]
+  },
+  {
+    "n": 18,
+    "partitions": 385,
+    "two_singleton_bases": [
+      {
+        "core": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "degree": 79394515200,
+        "target": 6745939200,
+        "largest_competitor": 4332968640,
+        "gap": 2412970560
+      },
+      {
+        "core": [
+          3,
+          3,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "degree": 23712495206400,
+        "target": 2014787174400,
+        "largest_competitor": 798650012160,
+        "gap": 1216137162240
+      },
+      {
+        "core": [
+          3,
+          3,
+          3,
+          3,
+          2,
+          2
+        ],
+        "degree": 210777735168000,
+        "target": 17909219328000,
+        "largest_competitor": 2694993100800,
+        "gap": 15214226227200
+      },
+      {
+        "core": [
+          4,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "degree": 8892185702400,
+        "target": 755545190400,
+        "largest_competitor": 361426665600,
+        "gap": 394118524800
+      },
+      {
+        "core": [
+          4,
+          3,
+          3,
+          2,
+          2,
+          2
+        ],
+        "degree": 948499808256000,
+        "target": 80591486976000,
+        "largest_competitor": 18733646131200,
+        "gap": 61857840844800
+      },
+      {
+        "core": [
+          4,
+          3,
+          3,
+          3,
+          3
+        ],
+        "degree": 843110940672000,
+        "target": 71636877312000,
+        "largest_competitor": 3615338496000,
+        "gap": 68021538816000
+      },
+      {
+        "core": [
+          4,
+          4,
+          2,
+          2,
+          2,
+          2
+        ],
+        "degree": 266765571072000,
+        "target": 22666355712000,
+        "largest_competitor": 7126825305600,
+        "gap": 15539530406400
+      },
+      {
+        "core": [
+          4,
+          4,
+          3,
+          3,
+          2
+        ],
+        "degree": 5690998849536000,
+        "target": 483548921856000,
+        "largest_competitor": 33127750656000,
+        "gap": 450421171200000
+      },
+      {
+        "core": [
+          4,
+          4,
+          4,
+          2,
+          2
+        ],
+        "degree": 2134124568576000,
+        "target": 181330845696000,
+        "largest_competitor": 27286805145600,
+        "gap": 154044040550400
+      },
+      {
+        "core": [
+          4,
+          4,
+          4,
+          4
+        ],
+        "degree": 2134124568576000,
+        "target": 181330845696000,
+        "largest_competitor": 3487131648000,
+        "gap": 177843714048000
+      },
+      {
+        "core": [
+          5,
+          3,
+          2,
+          2,
+          2,
+          2
+        ],
+        "degree": 569099884953600,
+        "target": 48354892185600,
+        "largest_competitor": 15203893985280,
+        "gap": 33150998200320
+      },
+      {
+        "core": [
+          5,
+          3,
+          3,
+          3,
+          2
+        ],
+        "degree": 4046932515225600,
+        "target": 343857011097600,
+        "largest_competitor": 23557511577600,
+        "gap": 320299499520000
+      },
+      {
+        "core": [
+          5,
+          4,
+          3,
+          2,
+          2
+        ],
+        "degree": 13658397238886400,
+        "target": 1160517412454400,
+        "largest_competitor": 174635552931840,
+        "gap": 985881859522560
+      },
+      {
+        "core": [
+          5,
+          4,
+          4,
+          3
+        ],
+        "degree": 27316794477772800,
+        "target": 2321034824908800,
+        "largest_competitor": 44635285094400,
+        "gap": 2276399539814400
+      },
+      {
+        "core": [
+          5,
+          5,
+          2,
+          2,
+          2
+        ],
+        "degree": 2731679447777280,
+        "target": 232103482490880,
+        "largest_competitor": 53952900857856,
+        "gap": 178150581633024
+      },
+      {
+        "core": [
+          5,
+          5,
+          3,
+          3
+        ],
+        "degree": 14568957054812160,
+        "target": 1237885239951360,
+        "largest_competitor": 23805485383680,
+        "gap": 1214079754567680
+      },
+      {
+        "core": [
+          5,
+          5,
+          4,
+          2
+        ],
+        "degree": 32780153373327360,
+        "target": 2785241789890560,
+        "largest_competitor": 190815843778560,
+        "gap": 2594425946112000
+      },
+      {
+        "core": [
+          6,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "degree": 142274971238400,
+        "target": 12088723046400,
+        "largest_competitor": 4791900072960,
+        "gap": 7296822973440
+      },
+      {
+        "core": [
+          6,
+          3,
+          3,
+          2,
+          2
+        ],
+        "degree": 7587998466048000,
+        "target": 644731895808000,
+        "largest_competitor": 97019751628800,
+        "gap": 547712144179200
+      },
+      {
+        "core": [
+          6,
+          4,
+          2,
+          2,
+          2
+        ],
+        "degree": 5690998849536000,
+        "target": 483548921856000,
+        "largest_competitor": 112401876787200,
+        "gap": 371147045068800
+      },
+      {
+        "core": [
+          6,
+          4,
+          3,
+          3
+        ],
+        "degree": 30351993864192000,
+        "target": 2578927583232000,
+        "largest_competitor": 49594761216000,
+        "gap": 2529332822016000
+      },
+      {
+        "core": [
+          6,
+          4,
+          4,
+          2
+        ],
+        "degree": 34145993097216000,
+        "target": 2901293531136000,
+        "largest_competitor": 198766503936000,
+        "gap": 2702527027200000
+      },
+      {
+        "core": [
+          6,
+          5,
+          3,
+          2
+        ],
+        "degree": 72844785274060800,
+        "target": 6189426199756800,
+        "largest_competitor": 424035208396800,
+        "gap": 5765390991360000
+      },
+      {
+        "core": [
+          6,
+          5,
+          5
+        ],
+        "degree": 87413742328872960,
+        "target": 7427311439708160,
+        "largest_competitor": 142832912302080,
+        "gap": 7284478527406080
+      },
+      {
+        "core": [
+          6,
+          6,
+          2,
+          2
+        ],
+        "degree": 22763995398144000,
+        "target": 1934195687424000,
+        "largest_competitor": 291059254886400,
+        "gap": 1643136432537600
+      },
+      {
+        "core": [
+          6,
+          6,
+          4
+        ],
+        "degree": 91055981592576000,
+        "target": 7736782749696000,
+        "largest_competitor": 148784283648000,
+        "gap": 7587998466048000
+      },
+      {
+        "core": [
+          7,
+          3,
+          2,
+          2,
+          2
+        ],
+        "degree": 6503998685184000,
+        "target": 552627339264000,
+        "largest_competitor": 128459287756800,
+        "gap": 424168051507200
+      },
+      {
+        "core": [
+          7,
+          3,
+          3,
+          3
+        ],
+        "degree": 11562664329216000,
+        "target": 982448603136000,
+        "largest_competitor": 33833307340800,
+        "gap": 948615295795200
+      },
+      {
+        "core": [
+          7,
+          4,
+          3,
+          2
+        ],
+        "degree": 78047984222208000,
+        "target": 6631528071168000,
+        "largest_competitor": 454323437568000,
+        "gap": 6177204633600000
+      },
+      {
+        "core": [
+          7,
+          5,
+          2,
+          2
+        ],
+        "degree": 46828790533324800,
+        "target": 3978916842700800,
+        "largest_competitor": 598750467194880,
+        "gap": 3380166375505920
+      },
+      {
+        "core": [
+          7,
+          5,
+          4
+        ],
+        "degree": 187315162133299200,
+        "target": 15915667370803200,
+        "largest_competitor": 306070526361600,
+        "gap": 15609596844441600
+      },
+      {
+        "core": [
+          7,
+          6,
+          3
+        ],
+        "degree": 208127957925888000,
+        "target": 17684074856448000,
+        "largest_competitor": 340078362624000,
+        "gap": 17343996493824000
+      },
+      {
+        "core": [
+          7,
+          7,
+          2
+        ],
+        "degree": 133796544380928000,
+        "target": 11368333836288000,
+        "largest_competitor": 778840178688000,
+        "gap": 10589493657600000
+      },
+      {
+        "core": [
+          8,
+          2,
+          2,
+          2,
+          2
+        ],
+        "degree": 2134124568576000,
+        "target": 181330845696000,
+        "largest_competitor": 57014602444800,
+        "gap": 124316243251200
+      },
+      {
+        "core": [
+          8,
+          3,
+          3,
+          2
+        ],
+        "degree": 45527990796288000,
+        "target": 3868391374848000,
+        "largest_competitor": 265022005248000,
+        "gap": 3603369369600000
+      },
+      {
+        "core": [
+          8,
+          4,
+          2,
+          2
+        ],
+        "degree": 51218989645824000,
+        "target": 4351940296704000,
+        "largest_competitor": 654883323494400,
+        "gap": 3697056973209600
+      },
+      {
+        "core": [
+          8,
+          4,
+          4
+        ],
+        "degree": 102437979291648000,
+        "target": 8703880593408000,
+        "largest_competitor": 167382319104000,
+        "gap": 8536498274304000
+      },
+      {
+        "core": [
+          8,
+          5,
+          3
+        ],
+        "degree": 218534355822182400,
+        "target": 18568278599270400,
+        "largest_competitor": 357082280755200,
+        "gap": 18211196318515200
+      },
+      {
+        "core": [
+          8,
+          6,
+          2
+        ],
+        "degree": 273167944777728000,
+        "target": 23210348249088000,
+        "largest_competitor": 1590132031488000,
+        "gap": 21620216217600000
+      },
+      {
+        "core": [
+          8,
+          8
+        ],
+        "degree": 409751917166592000,
+        "target": 34815522373632000,
+        "largest_competitor": 669529276416000,
+        "gap": 34145993097216000
+      },
+      {
+        "core": [
+          9,
+          3,
+          2,
+          2
+        ],
+        "degree": 60703987728384000,
+        "target": 5157855166464000,
+        "largest_competitor": 776158013030400,
+        "gap": 4381697153433600
+      },
+      {
+        "core": [
+          9,
+          4,
+          3
+        ],
+        "degree": 242815950913536000,
+        "target": 20631420665856000,
+        "largest_competitor": 396758089728000,
+        "gap": 20234662576128000
+      },
+      {
+        "core": [
+          9,
+          5,
+          2
+        ],
+        "degree": 291379141096243200,
+        "target": 24757704799027200,
+        "largest_competitor": 1696140833587200,
+        "gap": 23061563965440000
+      },
+      {
+        "core": [
+          9,
+          7
+        ],
+        "degree": 832511831703552000,
+        "target": 70736299425792000,
+        "largest_competitor": 1360313450496000,
+        "gap": 69375985975296000
+      },
+      {
+        "core": [
+          10,
+          2,
+          2,
+          2
+        ],
+        "degree": 27316794477772800,
+        "target": 2321034824908800,
+        "largest_competitor": 539529008578560,
+        "gap": 1781505816330240
+      },
+      {
+        "core": [
+          10,
+          3,
+          3
+        ],
+        "degree": 145689570548121600,
+        "target": 12378852399513600,
+        "largest_competitor": 238054853836800,
+        "gap": 12140797545676800
+      },
+      {
+        "core": [
+          10,
+          4,
+          2
+        ],
+        "degree": 327801533733273600,
+        "target": 27852417898905600,
+        "largest_competitor": 1908158437785600,
+        "gap": 25944259461120000
+      },
+      {
+        "core": [
+          10,
+          6
+        ],
+        "degree": 874137423288729600,
+        "target": 74273114397081600,
+        "largest_competitor": 1428329123020800,
+        "gap": 72844785274060800
+      },
+      {
+        "core": [
+          11,
+          3,
+          2
+        ],
+        "degree": 397335192403968000,
+        "target": 33760506544128000,
+        "largest_competitor": 2312919318528000,
+        "gap": 31447587225600000
+      },
+      {
+        "core": [
+          11,
+          5
+        ],
+        "degree": 953604461769523200,
+        "target": 81025215705907200,
+        "largest_competitor": 1558177225113600,
+        "gap": 79467038480793600
+      },
+      {
+        "core": [
+          12,
+          2,
+          2
+        ],
+        "degree": 273167944777728000,
+        "target": 23210348249088000,
+        "largest_competitor": 3492711058636800,
+        "gap": 19717637190451200
+      },
+      {
+        "core": [
+          12,
+          4
+        ],
+        "degree": 1092671779110912000,
+        "target": 92841392996352000,
+        "largest_competitor": 1785411403776000,
+        "gap": 91055981592576000
+      },
+      {
+        "core": [
+          13,
+          3
+        ],
+        "degree": 1344826805059584000,
+        "target": 114266329841664000,
+        "largest_competitor": 2197429420032000,
+        "gap": 112068900421632000
+      },
+      {
+        "core": [
+          14,
+          2
+        ],
+        "degree": 1873151621332992000,
+        "target": 159156673708032000,
+        "largest_competitor": 10903762501632000,
+        "gap": 148252911206400000
+      },
+      {
+        "core": [
+          16
+        ],
+        "degree": 6556030674665472000,
+        "target": 557048357978112000,
+        "largest_competitor": 10712468422656000,
+        "gap": 546335889555456000
+      }
+    ]
+  }
+]
