@@ -1,0 +1,17 @@
+{"n": 5, "relations": 6, "second_eigenvalue_failures": [], "minimum_gap": 9, "gap_minimizers": [[2, 1, 1, 1]], "edge_switch_gap": 9, "diameter_bound_failures": []}
+{"n": 6, "relations": 10, "second_eigenvalue_failures": [], "minimum_gap": 11, "gap_minimizers": [[2, 1, 1, 1, 1]], "edge_switch_gap": 11, "diameter_bound_failures": []}
+{"n": 7, "relations": 14, "second_eigenvalue_failures": [], "minimum_gap": 13, "gap_minimizers": [[2, 1, 1, 1, 1, 1]], "edge_switch_gap": 13, "diameter_bound_failures": []}
+{"n": 8, "relations": 21, "second_eigenvalue_failures": [], "minimum_gap": 15, "gap_minimizers": [[2, 1, 1, 1, 1, 1, 1]], "edge_switch_gap": 15, "diameter_bound_failures": []}
+{"n": 9, "relations": 29, "second_eigenvalue_failures": [], "minimum_gap": 17, "gap_minimizers": [[2, 1, 1, 1, 1, 1, 1, 1]], "edge_switch_gap": 17, "diameter_bound_failures": []}
+{"n": 10, "relations": 41, "second_eigenvalue_failures": [], "minimum_gap": 19, "gap_minimizers": [[2, 1, 1, 1, 1, 1, 1, 1, 1]], "edge_switch_gap": 19, "diameter_bound_failures": []}
+{"n": 11, "relations": 55, "second_eigenvalue_failures": [], "minimum_gap": 21, "gap_minimizers": [[2, 1, 1, 1, 1, 1, 1, 1, 1, 1]], "edge_switch_gap": 21, "diameter_bound_failures": []}
+{"n": 12, "relations": 76, "second_eigenvalue_failures": [], "minimum_gap": 23, "gap_minimizers": [[2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]], "edge_switch_gap": 23, "diameter_bound_failures": []}
+{"n": 13, "relations": 100, "second_eigenvalue_failures": [], "minimum_gap": 25, "gap_minimizers": [[2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]], "edge_switch_gap": 25, "diameter_bound_failures": []}
+{"n": 14, "relations": 134, "second_eigenvalue_failures": [], "minimum_gap": 27, "gap_minimizers": [[2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]], "edge_switch_gap": 27, "diameter_bound_failures": []}
+{"n": 15, "relations": 175, "second_eigenvalue_failures": [], "minimum_gap": 29, "gap_minimizers": [[2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]], "edge_switch_gap": 29, "diameter_bound_failures": []}
+{"n": 16, "relations": 230, "second_eigenvalue_failures": [], "minimum_gap": 31, "gap_minimizers": [[2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]], "edge_switch_gap": 31, "diameter_bound_failures": []}
+{"n": 17, "relations": 296, "second_eigenvalue_failures": [], "minimum_gap": 33, "gap_minimizers": [[2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]], "edge_switch_gap": 33, "diameter_bound_failures": []}
+{"n": 18, "relations": 384, "second_eigenvalue_failures": [], "minimum_gap": 35, "gap_minimizers": [[2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]], "edge_switch_gap": 35, "diameter_bound_failures": null}
+{"n": 19, "relations": 489, "second_eigenvalue_failures": [], "minimum_gap": 37, "gap_minimizers": [[2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]], "edge_switch_gap": 37, "diameter_bound_failures": null}
+{"n": 20, "relations": 626, "second_eigenvalue_failures": [], "minimum_gap": 39, "gap_minimizers": [[2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]], "edge_switch_gap": 39, "diameter_bound_failures": null}
+{"n": 21, "relations": 791, "second_eigenvalue_failures": [], "minimum_gap": 41, "gap_minimizers": [[2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]], "edge_switch_gap": 41, "diameter_bound_failures": null}

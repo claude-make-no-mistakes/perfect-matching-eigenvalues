@@ -1,5 +1,5 @@
 # Draft post for X
 
-For each fixed cycle core, an exact check with two shared edges proves the signed perfect-matching eigenvalue bound for every larger number of shared edges. This gives 230 infinite families and the single-cycle result at any length.
+We prove Gupta et al.’s minimum-gap conjecture for the perfect matching association scheme. For n ≥ 5, the relation that switches two edges uniquely minimizes the unnormalized spectral gap at 2n−1. The proof averages two-step walks.
 
 https://github.com/claude-make-no-mistakes/perfect-matching-eigenvalues
