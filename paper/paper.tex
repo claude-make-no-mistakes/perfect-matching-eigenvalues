@@ -2,446 +2,773 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
-\usepackage[margin=1in]{geometry}
-\usepackage{amsmath,amssymb,longtable,array,calc}
-\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
-\IfFileExists{booktabs.sty}{\usepackage{booktabs}}{%
-  \newcommand{\toprule}{\hline}
-  \newcommand{\midrule}{\hline}
-  \newcommand{\bottomrule}{\hline}
-}
-\setlength{\emergencystretch}{3em}
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{5pt}
+\usepackage{microtype}
+\usepackage[margin=0.95in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+
 \allowdisplaybreaks
-\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\newcounter{none}
-\title{An Edge-Conditioning Reduction for Perfect-Matching Eigenvalues}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\one}{\mathbf{1}}
+\DeclareMathOperator{\type}{type}
+\DeclareMathOperator{\spn}{span}
+
+\title{An Edge-Conditioning Reduction and Minimum Spectral Gap\\
+for Perfect-Matching Eigenvalues}
 \author{Claude Make No Mistakes}
-\date{25 November 2026 --- Working paper}
+\date{25 November 2026}
 
 \begin{document}
 \maketitle
+
 \begin{abstract}
-Conditioning on a shared edge reduces the signed second-eigenvalue
-inequality for each fixed core to the case of exactly two shared edges.
-We prove the reduction and verify the bases for 230 cores of weight at
-most sixteen. A separate argument settles the single-cycle family for
-arbitrary cycle size.
-We also prove the minimum-gap conjecture for all nonidentity relations at
-every size $n\ge5$ and show that the two-edge switch uniquely attains the
-minimum.
+We establish two structural results on the eigenvalues of the perfect matching
+association scheme on $2n$ vertices. First, conditioning on a shared edge
+reduces the signed second-eigenvalue conjecture of Gupta, Herman,
+Lacaze-Masmonteil, Maleki, and Meagher for each fixed core $\nu \vdash s$
+(with parts at least two) to the single two-singleton base $n = s+2$; whenever
+the base holds, the target eigenspace $V_{(2n-2,2)}$ strictly dominates all
+competing nontrivial representations at every $n \ge s+3$. Combining this
+reduction with exact computations settles all $230$ cores of weight
+$2 \le s \le 16$ for every $n \ge s+2$, and a separate starting case settles
+the single-cycle family $(s, 1^{n-s})$ for every $s \ge 2$ and $n \ge s+2$.
+Second, by averaging a two-step walk comparison against the two-edge switch
+relation $\sigma = (2, 1^{n-2})$, we prove Conjecture~6.1 of Gupta et~al.: for
+every $n \ge 5$, the minimum unnormalized adjacency spectral gap among all
+nonidentity relations is $2n - 1$, attained uniquely by $\sigma$.
 \end{abstract}
 
-For a fixed nonempty partition \(\nu\vdash s\) with parts at least two,
-the signed second-eigenvalue conjecture for \((\nu,1^{n-s})\) at all
-\(n\ge s+2\) is equivalent to its single instance at \(n=s+2\). When the
-target attains the signed maximum at the base, at each later size it is
-strictly above every competing eigenvalue on a different nontrivial
-representation. Exact orbit quotients settle the four bases of size
-\(s=6\) at \(n=8\), which proves the conjecture for all four families at
-every \(n\ge8\).
+\section{Introduction and main results}\label{sec:intro}
 
-\section{Definitions and the signed
-target}\label{definitions-and-the-signed-target}
+Let $\Omega_n$ denote the set of perfect matchings of the complete graph
+$K_{2n}$ on $2n$ vertices, of size $|\Omega_n| = (2n-1)!!$. Given two matchings
+$M, N \in \Omega_n$, their multiset union $M \cup N$ decomposes into
+edge-disjoint alternating cycles of even lengths; the \emph{relation type}
+$\type(M,N) \vdash n$ is the integer partition formed by the half-lengths of
+these alternating cycles, with each shared edge $e \in M \cap N$ contributing a
+part equal to $1$. These relations form the perfect matching association scheme
+on $\Omega_n$~\cite{Srinivasan}.
 
-Write \(\Omega_n\) for the perfect matchings of a complete graph on
-\(2n\) vertices. The relation type of \((M,N)\) records the half-lengths
-of the alternating cycles of the two matchings, counting a shared edge
-as a doubled cycle of half-length one. Fix \(\nu\) as above and put
-\(\mu_n=(\nu,1^{n-s})\) for \(n\ge s\). Let \(A_n\) be its adjacency
-operator, \(d_n\) its valency, and \(P_n=A_n/d_n\). Write \(b_n\) for
-the largest eigenvalue of \(P_n\) on the orthogonal complement of
-constants. This is the second eigenvalue in decreasing signed order with
-multiplicities. All inner products on matching spaces below use uniform
-measure.
-
-The matching permutation module is the multiplicity-free sum of the
-Specht modules \(V_{2\lambda}\), for \(\lambda\vdash n\). In the
-authors' notation the target row is \(\lambda=(n-1,1)\), and the
-subscript of \(A\) is the relation, not the module. Their formal
-Conjecture 1.3 also covers the one-singleton hook \((n-1,1)\) except at
-\(n=4\). Their Corollary 3.5 handles those hooks for \(n\ge6\), and
-Appendix A handles \(n=3,5\).
-\href{https://arxiv.org/html/2510.17135v2}{Gupta et al., Conjecture 1.3,
-Section 2 and Corollary 3.5}.
-
-For an edge \(e\) of the complete graph let \(g_e(M)=\mathbf1_{e\in M}\)
-and let \(U_n=\operatorname{span}\{g_e\}\). The incidence map from the
-permutation module on two-element sets to the matching module is
-equivariant. By Young's rule the domain has constituents
-\(V_{(2n)},V_{(2n-1,1)},V_{(2n-2,2)}\) for \(n\ge2\). The target
-permutation module contains no \(V_{(2n-1,1)}\) because its constituents
-have even row lengths. Constants lie in the image since
-\(\sum_e g_e=n\), and \(g_e\) is nonconstant for \(n\ge2\). Consequently
-
+For each partition $\mu \vdash n$, let $A_\mu$ denote the adjacency operator of
+the relation $\mu$, let $d_\mu$ be its valency, and let $P_\mu = A_\mu / d_\mu$
+be its normalized Markov operator. Equipped with the uniform inner product
+$\langle f, g \rangle = |\Omega_n|^{-1} \sum_{M \in \Omega_n} f(M) g(M)$,
+each $A_\mu$ is self-adjoint with constant eigenvector $\one$ of eigenvalue
+$d_\mu$. Write $b_n(\mu)$ for the largest eigenvalue of $P_\mu$ on $\one^\perp$
+(the second eigenvalue in decreasing signed order with multiplicities), and
+define the unnormalized adjacency spectral gap by
 \[
-U_n=\mathbf R\mathbf1\oplus V_{(2n-2,2)}.
+  \Delta_\mu
+  = \min_{\substack{f \perp \one \\ f \neq 0}}
+    \frac{\langle f, (d_\mu I - A_\mu) f \rangle}{\|f\|^2}
+  = d_\mu \bigl(1 - b_n(\mu)\bigr),
+\]
+which equals $0$ whenever the relation graph is disconnected.
+
+The permutation module $\R[\Omega_n]$ decomposes multiplicity-freely under the
+symmetric group $S_{2n}$ as
+\[
+  \R[\Omega_n] \cong \bigoplus_{\lambda \vdash n} V_{2\lambda},
+\]
+where $2\lambda = (2\lambda_1, 2\lambda_2, \dots)$ denotes the partition of
+$2n$ obtained by doubling every part of $\lambda$, and $V_{2\lambda}$ is the
+corresponding Specht module~\cite{Srinivasan}. In~\cite[Conjecture~1.3]{GuptaEtAl},
+Gupta, Herman, Lacaze-Masmonteil, Maleki, and Meagher conjectured that for
+every relation $\mu \vdash n$ with at least two parts equal to $1$ (and also
+for the one-singleton hooks $\mu = (n-1, 1)$ when $n \neq 4$, settled for
+$n \ge 6$ in~\cite[Corollary~3.5]{GuptaEtAl} and for $n=3,5$
+in~\cite[Appendix~A]{GuptaEtAl}), the largest signed eigenvalue of $A_\mu$ on
+$\one^\perp$ is attained on $V_{(2n-2,2)}$. In~\cite[Conjecture~6.1]{GuptaEtAl},
+they further conjectured that for $n \ge 5$, the minimum unnormalized spectral
+gap among all nonidentity relations is $2n-1$, attained uniquely by the
+two-edge switch relation $\sigma = (2, 1^{n-2})$.
+
+Fix a nonempty partition $\nu \vdash s$ (so $s \ge 2$) with all parts at least
+$2$, which we call a \emph{core}, and put $\mu_n = (\nu, 1^{n-s})$ for
+$n \ge s$. Writing $A_n = A_{\mu_n}$, $d_n = d_{\mu_n}$, $P_n = P_{\mu_n}$, and
+$b_n = b_n(\mu_n)$, let $\rho_n$ denote the normalized eigenvalue of $P_n$ on
+$V_{(2n-2,2)}$. Our first main result reduces the conjecture for the entire
+infinite family $\{\mu_n\}_{n \ge s+2}$ to its single two-singleton base
+$n = s+2$.
+
+\begin{theorem}[Fixed-core edge-conditioning reduction]\label{thm:reduction}
+Let $\nu \vdash s$ be a nonempty partition with all parts at least $2$, and let
+$\mu_n = (\nu, 1^{n-s})$. Then $b_n = \rho_n$ holds for all $n \ge s+2$ if and
+only if $b_{s+2} = \rho_{s+2}$. Moreover, if $b_{s+2} = \rho_{s+2}$ (even with
+a tie across distinct irreducible constituents at $n = s+2$), then for every
+$n \ge s+3$ the top nonconstant eigenspace of $P_n$ is strictly $V_{(2n-2,2)}$,
+and the relation graph of $\mu_n$ is connected for every $n \ge s+2$.
+\end{theorem}
+
+Starting from the one-singleton hook theorem~\cite[Corollary~3.5]{GuptaEtAl}
+yields an infinite two-parameter family in which both the cycle length and the
+number of shared edges are unbounded.
+
+\begin{corollary}[Single-cycle family]\label{cor:single-cycle}
+For every $s \ge 2$ and every $n \ge s+2$, the largest nonconstant eigenvalue
+of $A_{(s, 1^{n-s})}$ is attained on $V_{(2n-2,2)}$, and strictly exceeds all
+competing nontrivial eigenvalues whenever $s \ge 5$ or $n \ge s+3$.
+\end{corollary}
+
+Combining Theorem~\ref{thm:reduction} with exact finite-base computations gives
+the following family-wide certification.
+
+\begin{theorem}[Certified cores of weight at most sixteen]\label{thm:cores}
+For every one of the $230$ cores $\nu \vdash s$ with $2 \le s \le 16$ and all
+parts at least $2$, the strict inequality $b_{s+2}(\nu, 1, 1) = \rho_{s+2}$
+holds with unique maximizing nontrivial constituent $V_{(2s+2, 2)}$. Hence, for
+each of these $230$ cores and every $n \ge s+2$, the top nonconstant eigenspace
+of $A_{(\nu, 1^{n-s})}$ is $V_{(2n-2,2)}$.
+\end{theorem}
+
+Our second main result resolves Conjecture~6.1 of~\cite{GuptaEtAl} in full.
+
+\begin{theorem}[Minimum unnormalized spectral gap]\label{thm:min-gap}
+Let $n \ge 5$. Among all nonidentity relations $\mu \neq (1^n)$ of the perfect
+matching association scheme on $2n$ vertices, the minimum unnormalized adjacency
+spectral gap is $\Delta_\mu = 2n - 1$, attained uniquely by the two-edge switch
+relation $\sigma = (2, 1^{n-2})$. The threshold $n \ge 5$ is sharp.
+\end{theorem}
+
+The remainder of the paper is organized as follows. Section~\ref{sec:target}
+identifies the edge-indicator subspace and computes the target eigenvalue
+$\rho_n$. Section~\ref{sec:restriction} proves Theorem~\ref{thm:reduction} and
+Corollary~\ref{cor:single-cycle}. Section~\ref{sec:bases} details the exact
+orbit-quotient computation at $n = 8$ and the Jack-polynomial certification
+proving Theorem~\ref{thm:cores}. Section~\ref{sec:lower-order} records a
+lower-order sufficient condition and a branching refinement.
+Section~\ref{sec:min-gap} proves Theorem~\ref{thm:min-gap}, and
+Section~\ref{sec:repro} summarizes the computational and formal verification
+artifacts.
+
+\section{The edge-indicator subspace and target eigenvalue}\label{sec:target}
+
+For each edge $e \in E(K_{2n})$, define the indicator function
+$g_e \colon \Omega_n \to \R$ by $g_e(M) = \one_{e \in M}$, and set
+$U_n = \spn\{g_e : e \in E(K_{2n})\}$.
+
+\begin{lemma}\label{lem:target}
+Let $n \ge 2$, let $\nu \vdash s$ be a core with parts at least $2$ and
+$s \le n$, and let $\mu_n = (\nu, 1^{n-s})$. Then:
+\begin{enumerate}
+  \item $U_n = \R\one \oplus V_{(2n-2,2)}$;
+  \item $P_n$ acts on $V_{(2n-2,2)}$ as the scalar
+  \[
+    \rho_n = 1 - \frac{s}{2}\left(\frac{1}{n} + \frac{1}{n-1}\right);
+  \]
+  \item the valency of $\mu_n$ is
+  \[
+    d_n = \binom{n}{s} d_s,
+    \qquad
+    d_s = \frac{2^{s - \ell(\nu)} s!}{\prod_i i^{m_i} m_i!},
+  \]
+  where $m_i$ is the multiplicity of part $i$ in $\nu$ and
+  $\ell(\nu) = \sum_i m_i$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+The incidence map $\Phi \colon \R[E(K_{2n})] \to \R[\Omega_n]$ sending the
+basis vector $\delta_e$ to $g_e$ is $S_{2n}$-equivariant. By Young's rule, the
+permutation module on two-element subsets decomposes for $n \ge 2$ as
+\[
+  \R[E(K_{2n})] \cong V_{(2n)} \oplus V_{(2n-1,1)} \oplus V_{(2n-2,2)}.
+\]
+Every irreducible constituent of $\R[\Omega_n]$ has even row lengths, so
+$V_{(2n-1,1)}$ lies in $\ker \Phi$. Since $\sum_e g_e = n\one$, the trivial
+subspace $\R\one = V_{(2n)}$ lies in $U_n$. For $n \ge 2$, a fixed edge $e$
+belongs to some matchings and not others, so $g_e$ is nonconstant; by Schur's
+lemma, $U_n = \R\one \oplus V_{(2n-2,2)}$.
+
+Fix $M \in \Omega_n$ and let $N$ be a uniformly random $\mu_n$-neighbor of $M$.
+Since $\nu$ has no parts equal to $1$, $N$ shares exactly $n - s$ of the $n$
+edges of $M$. The stabilizer $H_M$ of $M$ in $S_{2n}$ acts transitively on the
+$n$ edges of $M$, so for any $e \in M$,
+\[
+  \Pr(e \in N \mid M) = \frac{n-s}{n} =: a.
+\]
+Likewise, $H_M$ acts transitively on the $\binom{2n}{2} - n = 2n(n-1)$ edges
+outside $M$, and $N$ contains exactly $s$ edges outside $M$, so for any
+$e \notin M$,
+\[
+  \Pr(e \in N \mid M) = \frac{s}{2n(n-1)} =: c.
+\]
+Hence $P_n g_e = c\one + (a - c) g_e$. Because $g_e$ has uniform mean
+$\E[g_e] = n / \binom{2n}{2} = 1/(2n-1)$ and $a + 2(n-1)c = 1$, subtracting
+$\frac{1}{2n-1}\one$ yields
+\[
+  P_n\!\left(g_e - \frac{1}{2n-1}\one\right)
+  = (a - c)\!\left(g_e - \frac{1}{2n-1}\one\right).
+\]
+As $g_e - \frac{1}{2n-1}\one$ is a nonzero element of
+$U_n \cap \one^\perp = V_{(2n-2,2)}$, the eigenvalue of $P_n$ on $V_{(2n-2,2)}$
+is
+\[
+  \rho_n = a - c
+  = 1 - \frac{s}{n} - \frac{s}{2n(n-1)}
+  = 1 - \frac{s}{2}\left(\frac{1}{n} + \frac{1}{n-1}\right).
 \]
 
-Conditional on \(M\), a uniform \(\mu_n\)-neighbor \(N\) shares exactly
-\(n-s\) of the \(n\) edges of \(M\). Its marginal probability of
-containing \(e\in M\) is \(a=(n-s)/n\) by symmetry. The stabilizer of
-\(M\) is also transitive on the \(\binom{2n}{2}-n=2n(n-1)\) edges
-outside \(M\), so the marginal there is \(c=s/[2n(n-1)]\). Thus
-\(P_ng_e=c+(a-c)g_e\), and subtracting the mean \(1/(2n-1)\) gives the
-normalized target eigenvalue
+Finally, choosing a $\mu_n$-neighbor of $M$ consists of selecting the $s$ edges
+of $M$ that participate in nontrivial alternating cycles ($\binom{n}{s}$ ways)
+and then choosing a $\nu$-neighbor on those $2s$ vertices ($d_s$ ways). The
+closed form for $d_s$ is the standard valency formula of the perfect matching
+association scheme~\cite[Lemmas~2.1--2.2]{GuptaEtAl}.
+\end{proof}
 
+\section{Restriction to a shared edge}\label{sec:restriction}
+
+Suppose $n > s$. For each edge $e \in E(K_{2n})$, define the edge star
+$\Omega_e = \{M \in \Omega_n : e \in M\}$, and for any
+$f \colon \Omega_n \to \R$ let $f_e = f|_{\Omega_e}$. Deleting the two
+endpoints of $e$ identifies $\Omega_e$ with $\Omega_{n-1}$, under which the
+induced relation on $\Omega_e$ is $\mu_{n-1} = (\nu, 1^{n-1-s})$ with
+normalized adjacency operator $P_{n-1}$.
+
+\begin{lemma}[Edge-conditioning identities]\label{lem:conditioning}
+Let $\nu \vdash s$ be a core and let $n > s$. For every
+$f \colon \Omega_n \to \R$,
 \[
-\rho_n=a-c=1-\frac{s}{2}\left(\frac1n+\frac1{n-1}\right).
+  \langle f, P_n f \rangle = \E_e\bigl[\langle f_e, P_{n-1} f_e \rangle_{\Omega_e}\bigr],
+  \qquad
+  \|f\|^2 = \E_e\bigl[\|f_e\|_{\Omega_e}^2\bigr],
 \]
+where $\E_e$ denotes expectation over a uniformly random edge $e \in E(K_{2n})$
+and the inner products on $\Omega_e$ use uniform measure on $\Omega_e$.
+\end{lemma}
 
-The valency is the number of ways to select the \(s\) matching edges to
-change times the valency on those \(2s\) vertices. In symbols,
-\(d_n=\binom ns d_s\) and \(d_s=2^{s-\ell(\nu)}s!/\prod_i i^{m_i}m_i!\),
-where \(m_i\) is the multiplicity of \(i\) in \(\nu\). The target
-spectral gap is \(d_n(1-\rho_n)\) wherever the conjecture holds.
-\href{https://arxiv.org/html/2510.17135v2\#S2.SS1}{Gupta et al., Lemmas
-2.1--2.2}.
-
-\section{Restriction to a shared
-edge}\label{restriction-to-a-shared-edge}
-
-Suppose \(n>s\). For any edge \(e\), let \(\Omega_e=\{M:e\in M\}\) and
-let \(f_e=f|_{\Omega_e}\). Removing the endpoints of \(e\) identifies
-\(\Omega_e\) with \(\Omega_{n-1}\). The induced relation is
-\(\mu_{n-1}\), and its normalized adjacency is \(P_{n-1}\) after this
-identification.
-
-Consider the following sampling rule. Choose \(e\) uniformly among all
-edges of the complete graph, then choose \(M\) uniformly in
-\(\Omega_e\), then choose \(N\) uniformly among its induced neighbors in
-\(\Omega_e\). Every matching contains exactly \(n\) edges and all stars
-have the same size, so \(M\) is uniform and \(e\) given \(M\) is uniform
-among its \(n\) edges. For a fixed \(\mu_n\)-neighbor \(N\), there are
-exactly \(n-s\) eligible choices of \(e\in M\cap N\). The conditional
-probability of that \(N\) given \(M\) is \((n-s)/(nd_{n-1})=1/d_n\).
-This proves the exact identities
-
+\begin{proof}
+Consider the following three-step sampling rule:
+\begin{enumerate}
+  \item choose $e$ uniformly among the $\binom{2n}{2} = n(2n-1)$ edges of $K_{2n}$;
+  \item choose $M$ uniformly in $\Omega_e$ (of size $|\Omega_{n-1}|$);
+  \item choose $N$ uniformly among the $d_{n-1}$ induced $\mu_{n-1}$-neighbors
+  of $M$ in $\Omega_e$.
+\end{enumerate}
+Every matching $M \in \Omega_n$ contains exactly $n$ edges and every edge star
+has size $|\Omega_{n-1}| = |\Omega_n| / (2n-1)$. Hence the marginal law of $M$
+is uniform on $\Omega_n$, and conditional on $M$, the edge $e$ is uniform among
+the $n$ edges of $M$. Given $M$, any fixed $\mu_n$-neighbor $N$ shares exactly
+$n - s$ edges with $M$, so there are $n - s$ choices of $e \in M \cap N$ that
+can produce $N$. By Lemma~\ref{lem:target}(3),
 \[
-\langle f,P_nf\rangle=\mathbb E_e\langle f_e,P_{n-1}f_e\rangle_{\Omega_e},
-\qquad
-\|f\|^2=\mathbb E_e\|f_e\|^2_{\Omega_e}.
+  \Pr(N \mid M)
+  = \frac{n - s}{n d_{n-1}}
+  = \frac{n - s}{n \binom{n-1}{s} d_s}
+  = \frac{1}{\binom{n}{s} d_s}
+  = \frac{1}{d_n}.
 \]
+Thus $(M, N)$ is distributed as a uniform ordered $\mu_n$-adjacent pair in
+$\Omega_n$. Computing $\E[f(M)f(N)]$ and $\E[f(M)^2]$ by conditioning on $e$
+gives both identities.
+\end{proof}
 
-Take \(f\in W_n=U_n^\perp\). For every edge \(e\), orthogonality to
-\(g_e\) says that \(f_e\) has mean zero. The local signed Rayleigh bound
-yields
-
+\begin{proof}[Proof of Theorem~\ref{thm:reduction}]
+Set $W_n = U_n^\perp$. By Lemma~\ref{lem:target}(1),
+$\one^\perp = V_{(2n-2,2)} \oplus W_n$ is an orthogonal decomposition into
+$P_n$-invariant subspaces. Take any $f \in W_n$. For every edge
+$e \in E(K_{2n})$, orthogonality $\langle f, g_e \rangle = 0$ states precisely
+that $f_e$ has mean zero on $\Omega_e$. Applying the signed Rayleigh bound on
+$\Omega_e \cong \Omega_{n-1}$ gives
 \[
-\langle f,P_nf\rangle\le b_{n-1}\|f\|^2.
+  \langle f_e, P_{n-1} f_e \rangle_{\Omega_e} \le b_{n-1} \|f_e\|_{\Omega_e}^2
 \]
-
-Both \(U_n\) and \(W_n\) are invariant. The target row gives
-\(b_n\ge\rho_n\) and the Rayleigh inequality gives
-\(b_n\le\max(\rho_n,b_{n-1})\). For every \(n>s\) in range,
-\(\rho_n-\rho_{n-1}=s/[n(n-2)]>0\). If \(b_{n-1}\le\rho_n\), the
-conjectured row attains \(b_n\). If \(b_{n-1}<\rho_n\), the top
-nonconstant eigenspace is exactly \(V_{(2n-2,2)}\). In particular,
-starting from \(b_{s+2}=\rho_{s+2}\), even with a tie at the base,
-proves the result and removes any tie across modules at every later
-size. The converse is immediate by taking \(n=s+2\). Since \(\rho_n<1\)
-for a nonempty core, any size certified this way also has a connected
-relation graph.
-
-This argument requires at least one shared edge for a restriction step.
-The identity relation has \(s=0\) and every eigenvalue is 1. For \(n=1\)
-the space has dimension one and the second-eigenvalue target has no
-meaning. The one-singleton relation \((3,1)\) at \(n=4\) has target 4
-and actual second eigenvalue 8 on \(V_{(2,2,2,2)}\). Even outside hooks,
-the example \((2,2,1)\) at \(n=5\) has target 6 and second eigenvalue
-15. A signed inequality can hold when the absolute-value version fails.
-At \((n,\mu)=(4,(2,1,1))\) the target is 5, and one competing eigenvalue
-is \(-6\). \href{https://arxiv.org/html/2510.17135v2\#A1}{Gupta et al.,
-Appendix A, Tables 5--6}.
-
-\subsection{A corollary with unbounded core
-size}\label{a-corollary-with-unbounded-core-size}
-
-For every pair of integers \(s\ge2\) and \(n\ge s+2\), the relation
-\((s,1^{n-s})\) has its largest nonconstant eigenvalue on
-\(V_{(2n-2,2)}\). For \(s\ge5\), start from the published Corollary 3.5
-at size \(s+1\ge6\). It gives \(b_{s+1}=\rho_{s+1}\) for the
-one-singleton relation \((s,1)\). Since \(\rho_{s+1}<\rho_{s+2}\), the
-preceding argument applies at every size from \(s+2\) onward. For
-\(s=2,3,4\), use the exact two-singleton bases at \(n=4,5,6\) in the
-computed table. Both the size of the changed alternating cycle and the
-number of shared edges can therefore vary without bound.
-\href{https://arxiv.org/html/2510.17135v2\#S3}{Gupta et al., Corollary
-3.5}.
-
-\section{Exact bases for the weight-six
-families}\label{exact-bases-for-the-weight-six-families}
-
-Use the adjacent-pair matching \(M_0\) and let \(H_n\) be its
-stabilizer. Its orbits on \(\Omega_n\) are indexed by the relation type
-with \(M_0\). To see transitivity for a given type, match up alternating
-cycles of the same length, then relabel corresponding vertices around
-each cycle, preserving the \(M_0\)-edges. For each relation \(\mu\),
-orbit row \(\sigma\), and orbit column \(\tau\), the quotient entry is
-the number of \(N\) with pair types
-\(\operatorname{type}(M_\sigma,N)=\mu\) and
-\(\operatorname{type}(M_0,N)=\tau\), where \(M_\sigma\) is any
-representative. These quotients act on the \(H_n\)-fixed subspace. Every
-matching-module constituent has a one-dimensional fixed subspace by
-Frobenius reciprocity and the multiplicity-free decomposition. Thus the
-quotient sees every constituent once, including constituents that tie
-for a particular relation.
-\href{https://doi.org/10.5802/alco.104}{Srinivasan, The perfect matching
-association scheme}.
-
-The native enumerator accumulated all the counts from 2,027,025
-matchings at \(n=8\). It enumerates each matching by pairing the least
-remaining vertex with each available partner in turn. A walk around the
-alternating cycles gives the relation types. It stores the 22 quotients
-of size \(22\times22\) in integer counters. The Python implementation
-computes the same quotients separately for \(n=3,4\) and verifies the
-complete published spectra at those sizes. The checks at all three sizes
-include the diagonal relation, row sums, detailed balance with orbit
-sizes, commutativity, and exact joint eigenvectors over the rationals.
-
-The joint eigenvectors were labeled independently of the workbook. If
-\(u\) is the spherical vector scaled so that \(u(M_0)=1\), its uniform
-squared norm is \(1/\dim V_{2\lambda}\). Indeed, if \(Q\) is the
-orthogonal projector onto the constituent, then \(Q\delta_{M_0}\) is
-fixed by \(H_n\), its squared counting norm is \(Q_{M_0,M_0}\), and
-transitivity gives \(Q_{M_0,M_0}=\dim V_{2\lambda}/|\Omega_n|\). The
-central transposition sum contributes \(n\) copies of the original
-matching and reaches each switch-neighbor twice, so its action is
-\(nI+2A_{(2,1^{n-2})}\). Its scalar on \(V_{2\lambda}\) is the sum of
-the Young diagram contents. The pair of hook-length dimension and
-content sum separates the labels at these sizes.
-\href{https://arxiv.org/html/2510.17135v2\#S4}{Gupta et al., Table 1 and
-Proposition 4.1}.
-
-{\def\LTcaptype{none} % do not increment counter
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2000}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2667}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2667}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2667}}@{}}
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-Base relation
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-Valency
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-Target on \(V_{(14,2)}\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-Largest other nonconstant eigenvalue
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-\((6,1,1)\) & 107520 & 21120 & 960 \\
-\((4,2,1,1)\) & 40320 & 7920 & 2520 \\
-\((3,3,1,1)\) & 17920 & 3520 & 1504 \\
-\((2,2,2,1,1)\) & 3360 & 660 & 396 \\
-\end{longtable}
-}
-
-The normalized target is \(11/56\) in each case. The full exact matrix
-and both shape orders are in certificate\_n8.json. All 484 adjacency
-eigenvalues and all 22 dimensions agree with the pinned authors'
-workbook. The worksheet rows use doubled Specht labels and the columns
-use doubled relation partitions. Worksheet row 27 finds the first signed
-maximum after excluding the trivial row, so ties select the first
-matching row. The workbook's per-column test row applies to relations
-with at least two doubled parts equal to 2. The Sage function
-\texttt{main\_conjecture} uses the same signed maximum and scope and
-excludes the identity column. These automated checks do not include the
-formal conjecture's one-singleton hooks. The exact comparison above
-reads the integer values in the spectrum table and independently
-determines all maximizers.
-\href{https://github.com/Himanshugupta23/Perfect-Matching-Association-Scheme/blob/9bfd0192a04b1c271b305ee3c8146b356ac41603/Excel_format_Evals_of_PM_Schm_upto_n\%3D15.xlsx}{Authors'
-workbook},
-\href{https://github.com/Himanshugupta23/Perfect-Matching-Association-Scheme/blob/9bfd0192a04b1c271b305ee3c8146b356ac41603/Evals_of_PM_scheme_via_Srinivasan_algorithm.sage.py\#L245-L274}{authors'
-Sage code}.
-
-A separate exact calculation using Jack polynomials certifies all 230
-bases for \(2\le s\le16\) and checks 72,035 workbook entries. The same
-propagation argument therefore settles every one of those core families
-at all admissible sizes. \href{https://github.com/claude-make-no-mistakes/perfect-matching-eigenvalues/blob/main/verification/ZONAL-SPEC.md}{Jack calculation}, \href{https://github.com/claude-make-no-mistakes/perfect-matching-eigenvalues/blob/main/verification/two-singleton-bases.json}{base certificate}.
-
-\section{A lower-order sufficient
-condition}\label{a-lower-order-sufficient-condition}
-
-The same Rayleigh identity applies at \(n=s+2\) before any conjecture is
-known for one-singleton relations. It suffices to show, for each core,
-that
-
+for every $e$. Averaging over $e$ via Lemma~\ref{lem:conditioning} yields
 \[
-b_{s+1}(\nu,1)\le\rho_{s+2}=\frac{3s+4}{2(s+1)(s+2)}.
+  \langle f, P_n f \rangle \le b_{n-1} \|f\|^2 \qquad (f \in W_n).
 \]
+Consequently, every eigenvalue of $P_n$ on $W_n$ is at most $b_{n-1}$, whereas
+$P_n$ acts as $\rho_n$ on $V_{(2n-2,2)}$. Therefore
+\begin{equation}\label{eq:sandwich}
+  \rho_n \le b_n \le \max(\rho_n, b_{n-1}) \qquad (n > s).
+\end{equation}
 
-This requires only the largest signed nonconstant eigenvalue, regardless
-of its label. Exact rational checks of the pinned workbook satisfy the
-strict inequality for all 134 cores with \(2\le s\le14\). Iterating once
-gives another sufficient condition, \(b_s(\nu)\le\rho_{s+2}\), because
-\(\rho_{s+1}<\rho_{s+2}\). That stronger condition fails for \((2,2)\),
-\((2,2,2)\), \((3,3)\), and \((2,2,2,2)\) in this range. For example
-\(b_4(2,2)=7/12>4/15=\rho_6\). The failures concern the sufficient
-bound. The corresponding two-singleton bases still hold. The universal
-one-singleton bound and arbitrary two-singleton bases remain open here.
+Since $s \ge 2$ and $n > s$, we have $n \ge 3$ and
+\begin{equation}\label{eq:rho-inc}
+  \rho_n - \rho_{n-1}
+  = \frac{s}{2}\left(\frac{1}{n-2} - \frac{1}{n}\right)
+  = \frac{s}{n(n-2)} > 0.
+\end{equation}
+If $b_{n-1} \le \rho_n$, then~\eqref{eq:sandwich} forces $b_n = \rho_n$.
+Moreover, if $b_{n-1} < \rho_n$, then every eigenvalue of $P_n$ on $W_n$ is
+strictly less than $\rho_n$, so the top nonconstant eigenspace of $P_n$ is
+strictly $V_{(2n-2,2)}$.
 
-For a shape-specific version, let \(f\) lie in \(V_{2\lambda}\). Under
-restriction to the subgroup fixing the endpoints of \(e\) pointwise, the
-only even constituents have shapes \(2\kappa\) obtained by removing a
-corner of \(\lambda\) and doubling row lengths. This follows by applying
-the symmetric-group branching rule twice, since reaching another even
-shape requires both removals from the same row. The restriction map
-\(f\mapsto f_e\) is equivariant for that subgroup, so the projections of
-\(f_e\) lie only in these constituents of the smaller matching module.
-The projected squared norms, averaged over \(e\) and divided by
-\(\|f\|^2\), are nonnegative and sum to 1. The exact Rayleigh identity
-writes the eigenvalue at \(\lambda\) as their convex combination of the
-corresponding predecessor eigenvalues. This restricts which lower-order
-rows can contribute to a particular competitor. The argument still
-requires a bound on the relevant lower-order spectra.
+Now assume $b_{s+2} = \rho_{s+2}$. By~\eqref{eq:rho-inc}, at $n = s+3$ we have
+$b_{s+2} = \rho_{s+2} < \rho_{s+3}$, so $b_{s+3} = \rho_{s+3}$ with strict
+separation from $W_{s+3}$. Inducting on $n \ge s+3$ gives $b_n = \rho_n$ and
+strict separation from $W_n$ at every $n \ge s+3$. The converse is immediate by
+taking $n = s+2$. Finally, since $s \ge 2$, $\rho_n < 1$ for every $n \ge s+2$,
+so $b_n = \rho_n < 1$ implies that the eigenvalue $1$ of $P_n$ is simple and
+hence the relation graph of $\mu_n$ is connected.
+\end{proof}
 
-\section{The smallest spectral gap in the perfect matching association
-scheme}\label{the-smallest-spectral-gap-in-the-perfect-matching-association-scheme}
+\begin{remark}[Boundary cases and signed versus absolute order]\label{rem:boundaries}
+The restriction step requires $n > s$, i.e., at least one shared edge. For the
+identity relation ($s = 0$), every eigenvalue of $P_n$ equals $1$; for $n = 1$,
+$\dim \R[\Omega_1] = 1$ and $\one^\perp = \{0\}$. Outside the two-singleton
+regime, the one-singleton hook $(3, 1)$ at $n = 4$ has target eigenvalue $4$ on
+$V_{(6,2)}$ but second eigenvalue $8$ on $V_{(2,2,2,2)}$, and $(2, 2, 1)$ at
+$n = 5$ has target $6$ on $V_{(8,2)}$ but second eigenvalue $15$ on
+$V_{(2,2,2,2,2)}$. Furthermore, the signed inequality can hold when the
+absolute-value version fails: for $\mu = (2, 1, 1)$ at $n = 4$, the target
+eigenvalue is $5$ while $V_{(2,2,2,2)}$ has eigenvalue $-6$~\cite[Appendix~A,
+Tables~5--6]{GuptaEtAl}.
+\end{remark}
 
-\textbf{Theorem.} Let \(n\ge5\). Among nonidentity relations of the
-perfect matching association scheme on \(2n\) vertices, the minimum
-unnormalized adjacency spectral gap is \(2n-1\). Only the relation
-\(\sigma=(2,1^{n-2})\), which switches two edges of a matching, attains
-it. This proves Conjecture 6.1 of the arXiv version of Gupta, Herman,
-Lacaze-Masmonteil, Maleki and Meagher.
-\href{https://arxiv.org/html/2510.17135v2\#S6}{Source, §6}
+\begin{proof}[Proof of Corollary~\ref{cor:single-cycle}]
+For $s \ge 5$, \cite[Corollary~3.5]{GuptaEtAl} proves that the one-singleton
+hook $(s, 1)$ at size $s + 1 \ge 6$ satisfies $b_{s+1} = \rho_{s+1}$. Since
+$\rho_{s+1} < \rho_{s+2}$ by~\eqref{eq:rho-inc}, applying~\eqref{eq:sandwich}
+at $n = s + 2$ yields $b_{s+2} = \rho_{s+2}$ with strict separation from
+$W_{s+2}$, and Theorem~\ref{thm:reduction} extends this to all $n \ge s + 2$.
+For $s \in \{2, 3, 4\}$, the exact two-singleton bases $(2,1,1)$ at $n=4$,
+$(3,1,1)$ at $n=5$, and $(4,1,1)$ at $n=6$ satisfy $b_{s+2} = \rho_{s+2}$
+strictly (Section~\ref{sec:bases}), and Theorem~\ref{thm:reduction} extends
+them to all $n \ge s+2$.
+\end{proof}
 
-Write \(\Omega\) for the perfect matchings. The relation type of two
-matchings is the partition formed by the half-lengths of their
-alternating cycles, with a shared edge contributing a part of size one.
-Write \(A_\mu,d_\mu\) for the adjacency matrix and degree of the
-relation graph, and define its gap \(\Delta_\mu\) by the smallest
-Rayleigh quotient of \(d_\mu I-A_\mu\) on the orthogonal complement of
-constants. This definition also gives zero if the graph is disconnected.
+\section{Exact base certifications}\label{sec:bases}
 
-\subsection{Comparing each relation to a
-switch}\label{comparing-each-relation-to-a-switch}
+\subsection{Orbit quotients for weight-six cores at \texorpdfstring{$n = 8$}{n = 8}}
 
-Take a pair \(M,L\) of the given nonidentity type \(\mu\). Select two
-edges of \(M\) in a nontrivial alternating cycle of \(M\cup L\), and
-delete them. The cycle becomes two paths whose endpoints are the four
-endpoints of the deleted edges. There are exactly three pairings of
-those endpoints. Connecting the endpoints within each path makes two
-alternating cycles. Each of the other two pairings joins the paths into
-one alternating cycle of the original length. One is the original
-pairing. Use the other to obtain a matching \(N\). The types of
-\((M,L),(L,N),(M,N)\) are then \(\mu,\mu,\sigma\). This construction
-also works on a cycle of length four, where the two paths each consist
-of a single edge of \(L\).
-
-Relabel this triple using a uniform permutation of the \(2n\) vertices.
-For any fixed type, the symmetric group acts transitively on ordered
-pairs of that type, by matching their alternating cycles and preserving
-the two edge colors. Hence the relabeling gives the uniform ordered pair
-law of type \(\mu\) on each leg and the uniform ordered pair law of type
-\(\sigma\) on the endpoints.
-
-For \(f\colon\Omega\to\mathbb R\), let \(D_\tau(f)\) denote the mean of
-\((f(P)-f(Q))^2\) over uniform ordered pairs of type \(\tau\). The
-square inequality \((u+v)^2\le 2(u^2+v^2)\) on the relabeled triple
-yields
-
+Fix the adjacent-pair reference matching
+$M_0 = \{\{0,1\}, \{2,3\}, \dots, \{2n-2, 2n-1\}\}$ and let $H_n$ be its
+stabilizer in $S_{2n}$. The $H_n$-orbits on $\Omega_n$ are indexed by the
+relation type with $M_0$: given two matchings of the same type with $M_0$,
+matching up alternating cycles of equal length and relabeling vertices around
+each cycle while preserving $M_0$-edges produces an element of $H_n$ mapping
+one to the other. For each relation $\mu$, orbit row $\sigma$, and orbit column
+$\tau$, the orbit quotient entry is
 \[
-D_\sigma(f)\le4D_\mu(f).
+  Q_\mu(\sigma, \tau)
+  = \bigl|\{N \in \Omega_n : \type(M_\sigma, N) = \mu
+    \text{ and } \type(M_0, N) = \tau\}\bigr|,
 \]
+where $M_\sigma$ is any representative of orbit $\sigma$. The matrices $Q_\mu$
+represent the action of $A_\mu$ on the $H_n$-fixed subspace
+$\R[\Omega_n]^{H_n}$. By Frobenius reciprocity and the multiplicity-free
+decomposition of $\R[\Omega_n]$, each constituent $V_{2\lambda}$ has a
+one-dimensional $H_n$-fixed subspace~\cite{Srinivasan}, so the simultaneous
+spectrum of $\{Q_\mu\}$ recovers every constituent exactly once, including ties
+for individual relations.
 
-Under the uniform inner product,
-\(\langle f,(d_\tau I-A_\tau)f\rangle=d_\tau D_\tau(f)/2\). The known
-switch degree and gap are \(d_\sigma=n(n-1)\) and
-\(\Delta_\sigma=2n-1\). Applying the Rayleigh inequality to every \(f\)
-perpendicular to constants now gives
+An independent C++17 enumerator counts all $(2\cdot 8 - 1)!! = 2{,}027{,}025$
+matchings at $n = 8$ by recursively pairing the least unmatched vertex with
+every available partner and walking the alternating cycles to accumulate all
+$22$ quotient matrices of size $22 \times 22$ in exact integer counters. A
+separate Python implementation computes the same quotients at $n = 3, 4$ and
+verifies complete agreement with the native enumerator and the published
+spectra~\cite[Appendix~A, Tables~4--5]{GuptaEtAl}. At all three sizes, exact
+rational checks verify the identity matrix, row sums, detailed balance with
+orbit sizes, pairwise commutativity, and joint rational eigenvectors.
 
+The $22$ joint eigenvectors are labeled independently of external tables as
+follows. If $u \in \R[\Omega_n]^{H_n}$ is the spherical vector of $V_{2\lambda}$
+normalized by $u(M_0) = 1$, and $Q_\lambda$ is the orthogonal projector onto
+$V_{2\lambda}$, then $Q_\lambda \delta_{M_0}$ is a scalar multiple of $u$ with
+squared counting norm $(Q_\lambda)_{M_0, M_0} = \dim V_{2\lambda} / |\Omega_n|$
+by transitivity; hence the uniform squared norm of $u$ is
+$1 / \dim V_{2\lambda}$. Furthermore, the central transposition sum
+$T = \sum_{1 \le i < j \le 2n} (i,j)$ fixes $M_0$ on the $n$ transpositions
+forming edges of $M_0$ and reaches each $\sigma$-neighbor via exactly two
+transpositions, so $T$ acts on $\R[\Omega_n]$ as $nI + 2A_\sigma$, and on
+$V_{2\lambda}$ as the sum of Young-diagram contents
+$c(2\lambda) = \sum_{(r,c) \in 2\lambda} (c - r)$~\cite[Proposition~4.1]{GuptaEtAl}.
+The pair $(\dim V_{2\lambda}, c(2\lambda))$ separates all partitions of $n$ at
+$n = 3, 4, 8$.
+
+\begin{table}[ht]
+\centering
+\caption{Exact two-singleton base eigenvalues for all four weight-$6$ cores at
+$n = 8$. In every case the normalized target eigenvalue is $\rho_8 = 11/56$.}
+\label{tab:n8}
+\begin{tabular}{lrrr}
+\toprule
+Base relation & Valency $d_8$ & Target on $V_{(14,2)}$ & Largest other nonconstant eigenvalue \\
+\midrule
+$(6, 1, 1)$ & $107{,}520$ & $21{,}120$ & $960$ \\
+$(4, 2, 1, 1)$ & $40{,}320$ & $7{,}920$ & $2{,}520$ \\
+$(3, 3, 1, 1)$ & $17{,}920$ & $3{,}520$ & $1{,}504$ \\
+$(2, 2, 2, 1, 1)$ & $3{,}360$ & $660$ & $396$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:n8} summarizes the four weight-$6$ bases at $n = 8$; the full
+$22 \times 22$ exact eigenmatrix is archived in
+\texttt{matchings/certificate\_n8.json}. All $484$ eigenvalues and all $22$
+dimensions agree identically with the pinned authors' workbook~\cite{GuptaRepo}.
+Note that the workbook's automated test row and the Sage routine
+\texttt{main\_conjecture} test relations with at least two singletons
+(excluding the identity and one-singleton hooks) using signed maxima; our
+comparison reads the integer spectrum table directly and determines all
+maximizers independently.
+
+\subsection{Jack-polynomial certification for all \texorpdfstring{$230$ cores with $2 \le s \le 16$}{230 cores with 2 <= s <= 16}}
+
+To prove Theorem~\ref{thm:cores} across all $230$ cores of weight
+$2 \le s \le 16$ (corresponding to $4 \le n \le 18$), an independent exact
+integer program (\texttt{verification/zonal.py}) computes the zonal polynomials
+(Jack polynomials at parameter $\alpha = 2$) in the power-sum basis $\{p_\mu\}$.
+Starting from the augmented monomial symmetric functions
+$\tilde{m}_\lambda = \sum_{\text{distinct } i_1,\dots,i_\ell}
+x_{i_1}^{\lambda_1} \cdots x_{i_\ell}^{\lambda_\ell}$, expanded in power sums
+via the collision recurrence for $p_{\lambda_1} \tilde{m}_{(\lambda_2,\dots,\lambda_\ell)}$,
+exact integer Gram--Schmidt orthogonalization in ascending lexicographic order
+(a linear extension of dominance order) with respect to the Hall inner product
+$\langle p_\mu, p_\nu \rangle_{\alpha=2} = \delta_{\mu\nu} 2^{\ell(\mu)} z_\mu$
+produces the zonal basis $\{Z_\lambda\}$. Normalizing each row so that the
+coefficient of $p_{(1^n)}$ equals $1$ yields the exact integer eigenmatrix
+$[p_\mu] Z_\lambda = d_\mu \omega^\lambda(\mu)$ of the perfect matching
+association scheme by~\cite[Theorem~2.2.1]{Lindzey}.
+
+Every computed table is checked against the representation dimension sum
+$\sum_\lambda \dim V_{2\lambda} = (2n-1)!!$, valency identity
+$d_\mu \cdot 2^{\ell(\mu)} z_\mu = 2^n n!$, weighted trace identity
+$\sum_\lambda (\dim V_{2\lambda}) \theta_\lambda(\mu)^2 = |\Omega_n| d_\mu$,
+and the edge-indicator formula of Lemma~\ref{lem:target}(2). Across
+$4 \le n \le 15$, all $72{,}035 = \sum_{n=4}^{15} p(n)^2$ eigenvalues match the
+pinned workbook~\cite{GuptaRepo} identically. Across all $230$ cores with
+$2 \le s \le 16$, the base gap $d_{s+2}\rho_{s+2} - \max_{\lambda \notin \{(n),(n-1,1)\}} \theta_\lambda(\nu, 1, 1)$
+is strictly positive, with smallest normalized gap $1/60$ attained at
+$\nu = (2, 2)$ ($d_6 = 180$, target $48$, largest competitor $45$). Applying
+Theorem~\ref{thm:reduction} completes the proof of Theorem~\ref{thm:cores}.
+
+\section{A lower-order sufficient condition and branching refinement}\label{sec:lower-order}
+
+The inequality~\eqref{eq:sandwich} also applies at $n = s + 2$ without assuming
+anything about the representation attaining $b_{s+1}$.
+
+\begin{proposition}[One-singleton sufficient condition]\label{prop:sufficient}
+For any core $\nu \vdash s$, if the one-singleton relation $(\nu, 1)$ at size
+$s + 1$ satisfies
 \[
-\Delta_\mu\ \ge\ \frac{d_\mu}{4n(n-1)}(2n-1).
+  b_{s+1}(\nu, 1) \le \rho_{s+2} = \frac{3s + 4}{2(s+1)(s+2)},
 \]
+then $b_{s+2}(\nu, 1, 1) = \rho_{s+2}$, and hence Theorem~\ref{thm:reduction}
+applies to $(\nu, 1^{n-s})$ for all $n \ge s+2$.
+\end{proposition}
 
-In particular, the gap is positive for every nonidentity type at these
-sizes. \href{https://arxiv.org/html/2510.17135v2\#S4}{Switch eigenvalue
-and gap, Gupta et al., §4}
+\begin{proof}
+Direct evaluation of Lemma~\ref{lem:target}(2) at $n = s+2$ gives
+$\rho_{s+2} = 1 - \frac{s}{2}(\frac{1}{s+2} + \frac{1}{s+1}) = \frac{3s+4}{2(s+1)(s+2)}$.
+The claim then follows immediately from~\eqref{eq:sandwich} at $n = s+2$.
+\end{proof}
 
-The comparison is strict for any nonconstant \(f\). Equality in the
-averaged square inequality would force \(f(L)=(f(M)+f(N))/2\) on the
-entire orbit. The three vertex marginals are uniform. Therefore the mean
-square of \(f(L)\) equals that of \(f(M)\), while the mean square of
-\((f(M)+f(N))/2\) is the mean square of \(f(M)\) minus
-\(D_\sigma(f)/4\). This would force \(D_\sigma(f)=0\). The switch gap is
-positive, so \(D_\sigma(f)=0\) implies \(f\) is constant. Applying
-strictness to a nonzero minimizing eigenvector perpendicular to
-constants makes the gap bound strict.
+Exact rational verification against the pinned workbook confirms the strict
+inequality $b_{s+1}(\nu, 1) < \rho_{s+2}$ for all $134$ cores with
+$2 \le s \le 14$. Iterating~\eqref{eq:sandwich} once more gives the stronger
+sufficient condition $b_s(\nu) \le \rho_{s+2}$ (since $\rho_{s+1} < \rho_{s+2}$).
+Among $2 \le s \le 14$, that stronger zero-singleton bound fails for exactly
+four cores: $(2,2)$, $(2,2,2)$, $(3,3)$, and $(2,2,2,2)$ (for instance,
+$b_4(2,2) = 7/12 > 4/15 = \rho_6$), even though the corresponding two-singleton
+bases all hold. Proving either $b_{s+1}(\nu, 1) \le \rho_{s+2}$ or
+$b_{s+2}(\nu, 1, 1) = \rho_{s+2}$ for arbitrary cores remains open.
 
-\subsection{Degrees and the small
-exception}\label{degrees-and-the-small-exception}
+\begin{proposition}[Shape-specific branching refinement]\label{prop:branching}
+Let $n > s$ and let $\lambda \vdash n$. Denote by $\theta_\lambda$ the
+eigenvalue of $P_n$ on $V_{2\lambda}$, and by $\theta'_\kappa$ the eigenvalue
+of $P_{n-1}$ on $V_{2\kappa}$ for $\kappa \vdash n-1$. Then $\theta_\lambda$ is
+a convex combination of $\{\theta'_\kappa : \kappa \prec \lambda\}$, where
+$\kappa \prec \lambda$ ranges over all partitions obtained by removing one
+corner box from $\lambda$.
+\end{proposition}
 
-Delete the singleton parts of \(\mu\) to get a core \(\nu\) of weight
-\(s\). Then \(d_\mu=\binom{n}{s}d_\nu\), since there are
-\(\binom{n}{s}\) ways to choose the reference edges in the nontrivial
-components. For a component of half-length \(a\) on prescribed reference
-edges the degree is \(2^{a-1}(a-1)!\), by the valency formula for a
-single cycle. Fix one of the \(s\) reference edges. Choosing an
-\(a\)-component containing it gives at least
-\(\binom{s-1}{a-1}2^{a-1}(a-1)!\) arrangements, multiplied by the degree
-of the remaining core. The chosen component is uniquely identifiable
-from the resulting matching as the component containing the fixed edge.
-Count an empty remaining core with degree one.
-\href{https://arxiv.org/html/2510.17135v2\#S2.SS1}{Valency formula,
-Gupta et al., Lemma 2.1}
+\begin{proof}
+Fix an edge $e \in E(K_{2n})$ and let $S_{2n-2} \subset S_{2n}$ be the subgroup
+fixing the endpoints of $e$ pointwise. Applying the symmetric-group branching
+rule twice to $V_{2\lambda}\!\downarrow_{S_{2n-2}}$, a resulting shape has all
+even row lengths if and only if both removed boxes come from the same row of
+$2\lambda$; such shapes are precisely $2\kappa$ for $\kappa \prec \lambda$.
+Because the restriction map $f \mapsto f_e$ from $\R[\Omega_n]$ to
+$\R[\Omega_e] \cong \R[\Omega_{n-1}]$ is $S_{2n-2}$-equivariant and
+$\R[\Omega_{n-1}]$ contains only even shapes, any $f \in V_{2\lambda}$
+satisfies $f_e \in \bigoplus_{\kappa \prec \lambda} V_{2\kappa}$. Writing
+$\pi_\kappa$ for the orthogonal projection onto $V_{2\kappa}$ in
+$\R[\Omega_e]$, Lemma~\ref{lem:conditioning} gives for any nonzero
+$f \in V_{2\lambda}$:
+\[
+  \theta_\lambda
+  = \frac{\langle f, P_n f \rangle}{\|f\|^2}
+  = \sum_{\kappa \prec \lambda}
+    \frac{\E_e\bigl[\|\pi_\kappa f_e\|_{\Omega_e}^2\bigr]}{\|f\|^2}\, \theta'_\kappa,
+\]
+and the coefficients are nonnegative and sum to
+$\E_e[\|f_e\|_{\Omega_e}^2] / \|f\|^2 = 1$.
+\end{proof}
 
-Suppose \(s\ge5\), and take \(a\) to be the largest part of the core.
+\section{The smallest spectral gap}\label{sec:min-gap}
 
+We now prove Theorem~\ref{thm:min-gap} (Conjecture~6.1 of~\cite{GuptaEtAl}).
+Throughout this section, let $\sigma = (2, 1^{n-2})$ denote the two-edge switch
+relation on $\Omega_n$. For any relation $\tau \vdash n$ and any
+$f \colon \Omega_n \to \R$, write
+\[
+  D_\tau(f) = \E_{(P, Q) \sim \tau}\bigl[(f(P) - f(Q))^2\bigr]
+\]
+for the mean squared difference over a uniformly random ordered pair $(P, Q)$
+of type $\tau$. Under the uniform inner product on $\Omega_n$, symmetry of the
+relation gives
+\begin{equation}\label{eq:dirichlet}
+  \langle f, (d_\tau I - A_\tau) f \rangle = \frac{d_\tau}{2} D_\tau(f).
+\end{equation}
+
+Recall that $d_\sigma = \binom{n}{2} \cdot 2 = n(n-1)$ and
+$\Delta_\sigma = 2n - 1$ for all $n \ge 2$~\cite[§4]{GuptaEtAl}. (This also
+follows directly from Section~\ref{sec:bases}: since $nI + 2A_\sigma$ acts on
+$V_{2\lambda}$ as the content sum $c(2\lambda)$, which is strictly maximized on
+nonconstant constituents at $(2n-2, 2)$ by dominance, one gets
+$\Delta_\sigma = \frac{1}{2}\bigl(c(2n) - c(2n-2,2)\bigr) = \frac{1}{2}((2n-2)+(2n-1)-(-1+0)) = 2n - 1$.)
+
+\begin{lemma}[Strict two-step switch comparison]\label{lem:switch-compare}
+Let $n \ge 2$ and let $\mu \neq (1^n)$ be any nonidentity relation of $\Omega_n$.
+For every nonconstant function $f \colon \Omega_n \to \R$,
+\[
+  D_\sigma(f) < 4 D_\mu(f).
+\]
+Consequently,
+\[
+  \Delta_\mu > \frac{d_\mu}{4 n(n-1)} (2n - 1).
+\]
+In particular, every nonidentity relation graph has strictly positive spectral
+gap.
+\end{lemma}
+
+\begin{proof}
+Fix an ordered pair $(M, L)$ of type $\mu$. Because $\mu \neq (1^n)$, the union
+$M \cup L$ contains at least one alternating cycle $C$ of length $2k$ with
+$k \ge 2$. Choose two distinct edges $e_1, e_2 \in M$ lying in $C$ and delete
+them from $C$. Removing $e_1$ and $e_2$ splits $C$ into two vertex-disjoint
+alternating paths $P_1, P_2$, each beginning and ending with an edge of $L$,
+whose four distinct endpoints are the four endpoints of $e_1$ and $e_2$ (when
+$k = 2$, each path is a single edge of $L$).
+
+There are exactly three ways to pair these four endpoints into two edges:
+\begin{enumerate}
+  \item pairing the two endpoints of $P_1$ and the two endpoints of $P_2$
+  creates two strictly smaller alternating cycles;
+  \item pairing the endpoints of $e_1$ and the endpoints of $e_2$ recovers the
+  original matching $M$ and the cycle $C$;
+  \item the third pairing joins $P_1$ and $P_2$ into a single alternating cycle
+  of the same length $2k$ (reversing the traversal of $P_2$).
+\end{enumerate}
+Let $N \in \Omega_n$ be the matching obtained from $M$ by replacing $\{e_1, e_2\}$
+with this third pairing while leaving all other edges of $M$ unchanged. Then
+$\type(M, L) = \mu$, $\type(L, N) = \mu$, and $\type(M, N) = \sigma$.
+
+Now let $\pi \in S_{2n}$ be uniformly random and set
+$(M', L', N') = (\pi M, \pi L, \pi N)$. For any fixed type $\tau$, the group
+$S_{2n}$ acts transitively on ordered pairs of type $\tau$ (by matching
+alternating cycles of equal length and preserving the two edge colors), so the
+pushforward of the uniform measure on $S_{2n}$ gives the uniform ordered-pair
+law of type $\tau$. Hence $(M', L')$ and $(L', N')$ each follow the uniform
+law on ordered pairs of type $\mu$, while $(M', N')$ follows the uniform law on
+ordered pairs of type $\sigma$.
+
+For any real numbers $x, y, z$, the identity
+\[
+  2(x - y)^2 + 2(y - z)^2 - (x - z)^2 = (x - 2y + z)^2 \ge 0
+\]
+applied to $(x, y, z) = (f(M'), f(L'), f(N'))$ and averaged over $\pi \in S_{2n}$
+gives
+\[
+  4 D_\mu(f) - D_\sigma(f)
+  = \E_\pi\!\left[\bigl(f(M') - 2f(L') + f(N')\bigr)^2\right] \ge 0.
+\]
+Suppose equality holds. Then $f(L') = \frac{1}{2}(f(M') + f(N'))$ for every
+$\pi \in S_{2n}$. Because the three vertex marginals $M', L', N'$ are each
+uniform on $\Omega_n$, taking mean squares yields
+\begin{align*}
+  \|f\|^2 = \E_\pi[f(L')^2]
+  &= \E_\pi\!\left[\left(\frac{f(M') + f(N')}{2}\right)^2\right] \\
+  &= \E_\pi\!\left[\frac{f(M')^2 + f(N')^2}{2} - \frac{(f(M') - f(N'))^2}{4}\right]
+   = \|f\|^2 - \frac{1}{4} D_\sigma(f).
+\end{align*}
+Hence $D_\sigma(f) = 0$. Since $\Delta_\sigma = 2n - 1 > 0$,
+equation~\eqref{eq:dirichlet} forces $f$ to be constant.
+
+Thus $D_\sigma(f) < 4 D_\mu(f)$ for every nonconstant $f$. Choosing a nonzero
+eigenvector $f \perp \one$ of $A_\mu$ attaining $\Delta_\mu$, we obtain
+\[
+  \Delta_\mu \|f\|^2
+  = \frac{d_\mu}{2} D_\mu(f)
+  > \frac{d_\mu}{8} D_\sigma(f)
+  = \frac{d_\mu}{4 d_\sigma} \langle f, (d_\sigma I - A_\sigma) f \rangle
+  \ge \frac{d_\mu}{4 n(n-1)} (2n - 1) \|f\|^2,
+\]
+and dividing by $\|f\|^2$ yields the stated strict gap bound.
+\end{proof}
+
+\begin{lemma}[Degree lower bounds]\label{lem:degrees}
+Let $n \ge 5$ and let $\mu \vdash n$ be a relation other than $(1^n)$,
+$\sigma = (2, 1^{n-2})$, and (when $n = 5$) $(2, 2, 1)$. Then
+\[
+  d_\mu \ge 4 n(n-1).
+\]
+\end{lemma}
+
+\begin{proof}
+Delete the singleton parts of $\mu$ to obtain its core $\nu \vdash s$ with all
+parts at least $2$. Since $\mu \neq (1^n)$ and $\mu \neq \sigma$, we have
+$3 \le s \le n$. By Lemma~\ref{lem:target}(3), $d_\mu = \binom{n}{s} d_\nu$.
+
+First observe a general lower bound on $d_\nu$. Let $a$ be any part of $\nu$
+and let $\nu' \vdash s - a$ be the residual core obtained by removing one part
+equal to $a$ (with $d_\emptyset = 1$ if $s = a$). Fix a reference matching
+$M_0$ on $2s$ vertices and a distinguished edge $e_0 \in M_0$. Restricting to
+those $\nu$-neighbors $N$ of $M_0$ in which $e_0$ lies in an alternating cycle
+of half-length $a$, we may choose the remaining $a - 1$ edges of $M_0$ in that
+cycle in $\binom{s-1}{a-1}$ ways, form a single alternating cycle of
+half-length $a$ on those $a$ edges in $d_{(a)} = 2^{a-1}(a-1)!$ ways, and
+choose a $\nu'$-neighbor on the remaining $s - a$ edges in $d_{\nu'}$ ways.
+Because the cycle containing $e_0$ is uniquely recovered from $N$, distinct
+choices produce distinct matchings, giving
+\begin{equation}\label{eq:core-recurrence}
+  d_\nu \ge \binom{s-1}{a-1} 2^{a-1}(a-1)!\, d_{\nu'}
+  = 2^{a-1} \frac{(s-1)!}{(s-a)!}\, d_{\nu'}.
+\end{equation}
+
+We first show that $d_\nu \ge 4 s(s-1)$ whenever $s \ge 5$. Let $a \ge 2$ be
+the largest part of $\nu$:
 \begin{itemize}
-\tightlist
-\item
-  If \(a\ge4\), the count is at least \(8(s-1)(s-2)(s-3)\). Since
-  \(2(s-2)(s-3)\ge s\) for \(s\ge5\), this is at least \(4s(s-1)\).
-\item
-  If \(a=3\), the residual core has at least one nontrivial component,
-  so its degree is at least two. The count is at least \(8(s-1)(s-2)\),
-  which is at least \(4s(s-1)\).
-\item
-  If \(a=2\), all parts are two. For even \(s\ge6\), the degrees \(d_s\)
-  satisfy \(d_s=2(s-1)d_{s-2}\), by choosing the partner of the fixed
-  reference edge and one of the two possible switches. The base is
-  \(d_6=2\cdot5\cdot12=120=4\cdot6\cdot5\). The recurrence preserves the
-  bound \(d_s\ge4s(s-1)\), since \(2(s-2)(s-3)\ge s\).
+  \item \emph{Case $a \ge 4$.} Since $s \ge a \ge 4$ and $d_{\nu'} \ge 1$,
+  every factor in $(s-1)!/(s-a)!$ beyond $(s-1)(s-2)(s-3)$ is at least $1$, and
+  $2^{a-1} \ge 8$. Thus~\eqref{eq:core-recurrence} gives
+  $d_\nu \ge 8(s-1)(s-2)(s-3)$. For $s \ge 5$,
+  $2(s-2)(s-3) - s = (2s-3)(s-4) > 0$, so $d_\nu \ge 4s(s-1)$.
+  \item \emph{Case $a = 3$.} Since $s \ge 5$, the residual core $\nu'$ has
+  weight $s - 3 \ge 2$ with all parts at least $2$, so $d_{\nu'} \ge 2$ (as its
+  largest part $b \ge 2$ contributes at least $2^{b-1}(b-1)! \ge 2$). Hence
+  $d_\nu \ge 4(s-1)(s-2) \cdot 2 = 8(s-1)(s-2) \ge 4s(s-1)$, because
+  $2(s-2) \ge s$ for $s \ge 4$.
+  \item \emph{Case $a = 2$.} Every part of $\nu$ equals $2$, so $s \ge 6$ is
+  even. Writing $d_s = d_{(2^{s/2})}$, the cycle containing $e_0$ always has
+  half-length $2$, so~\eqref{eq:core-recurrence} holds with equality:
+  $d_s = 2(s-1) d_{s-2}$. From $d_2 = 2$ and $d_4 = 2 \cdot 3 \cdot 2 = 12$ we
+  obtain the base $d_6 = 2 \cdot 5 \cdot 12 = 120 = 4 \cdot 6 \cdot 5$. For
+  even $s \ge 8$, induction gives
+  $d_s = 2(s-1) d_{s-2} \ge 8(s-1)(s-2)(s-3) \ge 4s(s-1)$, again using
+  $2(s-2)(s-3) \ge s$.
+\end{itemize}
+Therefore, for all $5 \le s \le n$,
+\[
+  d_\mu = \binom{n}{s} d_\nu
+  \ge 4 \binom{n}{s} s(s-1)
+  = 4 n(n-1) \binom{n-2}{s-2}
+  \ge 4 n(n-1).
+\]
+
+It remains to check $s = 3$ and $s = 4$:
+\begin{itemize}
+  \item For $s = 3$, the unique core is $\nu = (3)$ with $d_{(3)} = 8$, giving
+  $d_\mu = 8\binom{n}{3} = \frac{4}{3} n(n-1)(n-2) \ge 4n(n-1)$ for all
+  $n \ge 5$.
+  \item For $s = 4$, the two cores are $\nu = (4)$ with $d_{(4)} = 48$ and
+  $\nu = (2,2)$ with $d_{(2,2)} = 12$. For $\nu = (4)$,
+  $d_\mu = 48\binom{n}{4} = 2 n(n-1)(n-2)(n-3) \ge 12 n(n-1) > 4n(n-1)$ for all
+  $n \ge 5$. For $\nu = (2,2)$,
+  $d_\mu = 12\binom{n}{4} = \frac{1}{2} n(n-1)(n-2)(n-3) \ge 4n(n-1)$ for all
+  $n \ge 6$ (since $(n-2)(n-3) \ge 12 > 8$).
+\end{itemize}
+This covers every relation at $n \ge 5$ except $(1^n)$, $\sigma$, and
+$(2, 2, 1)$ at $n = 5$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:min-gap}]
+For any relation $\mu \notin \{(1^n), \sigma\}$ at $n \ge 5$ other than
+$(2, 2, 1)$ at $n = 5$, combining Lemmas~\ref{lem:switch-compare}
+and~\ref{lem:degrees} gives
+\[
+  \Delta_\mu > \frac{d_\mu}{4 n(n-1)}(2n - 1) \ge 2n - 1 = \Delta_\sigma.
+\]
+For the single remaining case $\mu = (2, 2, 1)$ at $n = 5$, the exact $n = 5$
+eigenmatrix~\cite[Appendix~A, Table~6]{GuptaEtAl} (also independently verified
+by \texttt{verification/zonal.py}) gives valency $d_{(2,2,1)} = 60$ and largest
+nonconstant eigenvalue $15$ (on $V_{(2,2,2,2,2)}$), hence
+$\Delta_{(2,2,1)} = 60 - 15 = 45 > 9 = \Delta_{(2,1,1,1)}$.
+
+Finally, the lower limit $n \ge 5$ is sharp: at $n = 4$, the exact
+eigenmatrix~\cite[Appendix~A, Table~5]{GuptaEtAl} gives
+$\Delta_{(2,2)} = 12 - 7 = 5 < 7 = 12 - 5 = \Delta_{(2,1,1)}$.
+\end{proof}
+
+\begin{remark}[Scope and diameter comparison]\label{rem:scope}
+Theorem~\ref{thm:min-gap} settles the unnormalized spectral gap in
+Conjecture~6.1 of~\cite{GuptaEtAl}; for normalized gaps,
+Lemma~\ref{lem:switch-compare} gives the factor-four comparison
+$1 - b_n(\mu) > \frac{1}{4}(1 - b_n(\sigma))$. Because Lemma~\ref{lem:switch-compare}
+realizes every two-edge switch as a two-step walk in $A_\mu$, it yields a
+universal diameter upper bound of $2(n-1)$ (since the switch graph has diameter
+$n - 1$). Conjecture~6.2 of~\cite{GuptaEtAl} asks for the sharper diameter
+bound $n - 1$; exact walk-coefficient calculations in the companion repository
+verify this sharper bound for all $1{,}187$ nonidentity relations through
+$n = 17$.
+\end{remark}
+
+\section{Computational verification and reproducibility}\label{sec:repro}
+
+All finite computations and abstract arithmetic lemmas are independently
+reproducible from the companion repository:
+\begin{itemize}
+  \item \textbf{Exact replay} (\texttt{replay.py}): checks SHA-256 digests of
+  the baseline scripts and small-size controls ($n = 3, 4$), compiles and runs
+  \texttt{matchings/orbit\_quotients.cpp} to reproduce all $484$ labeled
+  eigenvalues and $22$ dimensions at $n = 8$, reproduces all $134$
+  one-singleton sufficient-condition checks and the four zero-singleton
+  exceptions for $2 \le s \le 14$, and regenerates all $230$ two-singleton
+  bases ($2 \le s \le 16$) via \texttt{verification/zonal.py}, matching all
+  $72{,}035$ eigenvalues in the pinned workbook~\cite{GuptaRepo} for
+  $4 \le n \le 15$.
+  \item \textbf{Extended conjecture check} (\texttt{verification/search\_conjectures.py}):
+  verifies Conjecture~1.3 and Conjecture~6.1 for all $3{,}477$ nonidentity
+  relations with $5 \le n \le 21$, and verifies the diameter bound $n - 1$ of
+  Conjecture~6.2 for all $1{,}187$ nonidentity relations with $5 \le n \le 17$
+  via the exact trace pairing for $(I + A_\mu)^{n-1}$, finding no
+  counterexample.
+  \item \textbf{Lean~4 checks} (\texttt{formalization/}): verified in
+  Lean~4.34.1 with zero warnings and only standard axioms;
+  \texttt{Propagation.lean} formalizes the abstract rational induction step
+  behind Theorem~\ref{thm:reduction}, and \texttt{EnergyComparison.lean}
+  formalizes the pointwise square and averaged factor-four inequality behind
+  Lemma~\ref{lem:switch-compare}.
 \end{itemize}
 
-Thus \(d_\mu\ge4n(n-1)\) for \(s\ge5\), as
-\(\binom ns s(s-1)=n(n-1)\binom{n-2}{s-2}\). For \(s=3\) the degree is
-\(8\binom{n}{3}\), which meets the same bound at \(n\ge5\). For \(s=4\)
-the two possible core degrees are \(48\) and \(12\), for \((4)\) and
-\((2,2)\) respectively. Both meet the bound at \(n\ge6\), and at \(n=5\)
-only \(\mu=(2,2,1)\) falls below it. The published \(n=5\) eigenmatrix
-gives that relation valency 60 and largest nonconstant eigenvalue 15,
-for a gap of \(45>9\). The core of weight two is precisely the switch
-relation. These cases establish the minimum.
-\href{https://arxiv.org/html/2510.17135v2\#A1}{Exact \(n=5\) table}
+\begin{thebibliography}{9}
 
-\subsection{Scope}\label{scope}
+\bibitem{GuptaEtAl}
+H.~Gupta, A.~Herman, A.~Lacaze-Masmonteil, R.~Maleki, and K.~Meagher,
+\emph{Eigenvalues of the perfect matching association scheme},
+arXiv:2510.17135v2 (2025); published in \emph{Electron.\ J.\ Combin.},
+\href{https://doi.org/10.37236/15092}{doi:10.37236/15092}.
 
-The argument applies to the unnormalized adjacency gap in Conjecture
-6.1. The normalized gaps satisfy the factor-four comparison above. The
-proof uses a two-step walk for every switch, which by itself yields only
-the diameter bound \(2(n-1)\). Conjecture 6.2 asks for \(n-1\). The
-separate finite calculation checks that sharper bound over its stated
-range.
+\bibitem{GuptaRepo}
+H.~Gupta et~al.,
+\emph{Perfect-Matching-Association-Scheme} (pinned workbook
+\nolinkurl{Excel_format_Evals_of_PM_Schm_upto_n=15.xlsx} and Sage script at
+commit \texttt{9bfd019}),
+\url{https://github.com/Himanshugupta23/Perfect-Matching-Association-Scheme}.
 
+\bibitem{Lindzey}
+N.~Lindzey,
+\emph{Matchings and Representation Theory},
+Ph.D.\ thesis, University of Waterloo (2018), Chapter~2, Theorem~2.2.1.
 
-The lower limit \(n\ge5\) is sharp. At \(n=4\), the \((2,2)\)
-relation has gap \(12-7=5\), while the switch relation has gap
-\(12-5=7\), by the published \(n=4\) eigenmatrix.
-\href{https://arxiv.org/html/2510.17135v2\#A1}{Source, Table 5}
+\bibitem{Srinivasan}
+M.~K.~Srinivasan,
+\emph{The perfect matching association scheme},
+\emph{Algebraic Combinatorics} \textbf{3} (2020), no.~3, 559--591,
+\href{https://doi.org/10.5802/alco.104}{doi:10.5802/alco.104}.
 
-\section{Computational
-reproducibility}\label{computational-reproducibility}
-
-The companion repository includes replay commands, exact input data, and
-source code. AI assistance was used to develop and check the arguments
-and the software. This working paper reports the stated restricted
-results.
+\end{thebibliography}
 
 \end{document}

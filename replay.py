@@ -1,4 +1,4 @@
-"""Replay the campaign's exact certificates. Run with Python 3.12 and SymPy 1.14."""
+"""Replay all exact computational certificates. Run with Python 3.12+ and SymPy 1.14."""
 
 import argparse
 from hashlib import sha256

@@ -81,12 +81,12 @@ For a shape-specific version, let \(f\) lie in \(V_{2\lambda}\). Under restricti
 
 ## Reproduction
 
-The scripts were checked with Python 3.12.14, SymPy 1.14.0 and GNU C++17. With the compiler and its runtime on `PATH`, run from this directory.
+The scripts require Python 3.12+, SymPy 1.14.0, and a GNU C++17 compiler (`g++`). From this directory, run:
 
-```powershell
-python -B check_baseline.py
-python -B check_n8.py --output certificate_n8.replay.json
-python -B check_stretch.py
+```sh
+python3 -B check_baseline.py
+python3 -B check_n8.py --output certificate_n8.replay.json
+python3 -B check_stretch.py
 ```
 
-Use `--cxx C:/msys64/ucrt64/bin/g++.exe` to select that compiler when needed, and add `C:/msys64/ucrt64/bin` to `PATH` for its runtime. Both workbook checks accept `--workbook PATH` for a local copy and verify the same SHA-256 as the default pinned download. The pre-computation baseline files and checksums are in [baseline/SHA256SUMS](baseline/SHA256SUMS). The stretch calculation uses the authors' tabulated integer spectra. The independent native quotient calculation is confined to \(n\le8\).
+Alternatively, run `python3 -B replay.py` from the repository root to replay all certificates together. Pass `--cxx PATH` to select a specific C++17 compiler and `--workbook PATH` for a local copy of the hash-pinned workbook (both workbook checks verify the same SHA-256 as the default pinned download). The pre-computation baseline files and checksums are in [baseline/SHA256SUMS](baseline/SHA256SUMS). The stretch calculation uses the authors' tabulated integer spectra; the independent native quotient calculation covers $n \le 8$.
