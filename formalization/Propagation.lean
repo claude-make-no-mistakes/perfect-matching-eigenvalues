@@ -10,7 +10,7 @@ theorem extend_one (previous current target : Rat)
     (upper : current ≤ max target previous) :
     current = target := by
   have max_eq : max target previous = target := by
-    rw [Rat.max_def, if_neg (Rat.not_le.mpr rising)]
+    rw [Rat.max_def, ite_eq_right (Rat.not_le.mpr rising)]
   rw [max_eq] at upper
   exact Rat.le_antisymm upper lower
 
